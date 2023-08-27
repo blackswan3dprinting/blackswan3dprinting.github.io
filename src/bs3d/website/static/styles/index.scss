@@ -10,6 +10,11 @@ $FONT: Georgia, 'Times New Roman', Times, serif;
     flex-direction: row;
 }
 
+@mixin FLEXCOL{
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     color: $WHITE;
     background-color: $BLACK;
@@ -39,4 +44,34 @@ header {
         color: $YELLOW;
         cursor: pointer;
     }
+}
+
+footer {
+    @include FLEXCOL();
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    a {
+        color: $WHITE;
+        text-decoration: none;
+        &:hover {
+            color: $YELLOW;
+            cursor: pointer;
+        }
+    }
+}
+
+.footer-socials-colors {
+    filter: brightness(0) invert(1);
+}
+
+#footer-socials {
+    display: flex;
+    align-items: center;
+  }
+  
+.footer-socials-logo {
+    margin: 0 25px;
 }
