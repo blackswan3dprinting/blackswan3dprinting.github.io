@@ -2,3 +2,4 @@ __pycache__
 .vscode
 *.css
 *.css.map
+quick_reload.py
