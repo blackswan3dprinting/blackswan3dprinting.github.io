@@ -3,8 +3,40 @@ $DARKBLUE: #050E36;
 $BLACK: black;
 $WHITE: white;
 
+$FONT: Georgia, 'Times New Roman', Times, serif;
+
+@mixin FLEXROW{
+    display: flex;
+    flex-direction: row;
+}
+
 body {
     color: $WHITE;
     background-color: $BLACK;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: $FONT;
+}
+
+header {
+    @include FLEXROW();
+    justify-content: space-between;
+}
+
+#header-menu {
+    @include FLEXROW();
+    justify-content: center;
+    align-items: center;
+}
+
+.header-menu-button {
+    margin: 0 10px;
+    border: none;
+    background-color: transparent;
+    color: $WHITE;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+
+    &:hover {
+        color: $YELLOW;
+        cursor: pointer;
+    }
 }
