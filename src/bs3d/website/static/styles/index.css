@@ -2,47 +2,4 @@ body {
     color: white;
     background-color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    height: 90vh;
-    text-align: center;
-}
-
-.footer-socials-colors {
-    filter: brightness(0) invert(1);
-}
-
-#name {
-    font-size: 50px;
-}
-
-#construction {
-    font-size: 35px;
-}
-
-#div-socials {
-  display: flex;
-  align-items: center;
-}
-
-.footer-socials-logo {
-  margin: 0 25px;
-}
-
-@media only screen and (max-width: 661px) {
-  #name {
-    font-size: 35px;
-  }
-
-  #construction {
-    font-size: 25px;
-  }
-
-  .footer-socials-logo {
-    margin: 0 10px;
-  }
 }
