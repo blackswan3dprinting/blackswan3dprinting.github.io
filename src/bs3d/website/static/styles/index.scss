@@ -1,5 +1,10 @@
+$YELLOW: #F4E04D;
+$DARKBLUE: #050E36;
+$BLACK: black;
+$WHITE: white;
+
 body {
-    color: white;
-    background-color: black;
+    color: $WHITE;
+    background-color: $BLACK;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
