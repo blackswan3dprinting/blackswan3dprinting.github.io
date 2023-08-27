@@ -1,0 +1,77 @@
+$YELLOW: #F4E04D;
+$DARKBLUE: #050E36;
+$BLACK: black;
+$WHITE: white;
+
+$FONT: Georgia, 'Times New Roman', Times, serif;
+
+@mixin FLEXROW{
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin FLEXCOL{
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    color: $WHITE;
+    background-color: $BLACK;
+    font-family: $FONT;
+}
+
+header {
+    @include FLEXROW();
+    justify-content: space-between;
+}
+
+#header-menu {
+    @include FLEXROW();
+    justify-content: center;
+    align-items: center;
+}
+
+.header-menu-button {
+    margin: 0 10px;
+    border: none;
+    background-color: transparent;
+    color: $WHITE;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+
+    &:hover {
+        color: $YELLOW;
+        cursor: pointer;
+    }
+}
+
+footer {
+    @include FLEXCOL();
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    a {
+        color: $WHITE;
+        text-decoration: none;
+        &:hover {
+            color: $YELLOW;
+            cursor: pointer;
+        }
+    }
+}
+
+.footer-socials-colors {
+    filter: brightness(0) invert(1);
+}
+
+#footer-socials {
+    display: flex;
+    align-items: center;
+  }
+  
+.footer-socials-logo {
+    margin: 0 25px;
+}
