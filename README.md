@@ -1,17 +1,22 @@
 # blackswan3d.com
 
-This will be the repository for the `blackswan3d.com` code.
+Welcome to the [blackswan3d.com](https://blackswan3d.com) repository. This document will serve as the documentation for the website in case future developers need to edit the website.
 
-## Software
+## Software/Tools
 
-Some of the software we may use includes:
-|Software|Purpose|
-|---|---|
-|[Namecheap](https://www.namecheap.com)|Domain registration|
-|[Fly.io](https://fly.io)|Backend/web hosting|
-|[flask](https://flask.palletsprojects.com/en/) OR [django](https://www.djangoproject.com)|Backend|
-|Python|Backend|
-|[Google Sheets API](https://developers.google.com/sheets/api/guides/concepts)|Database management|
-|[ChaluBot](https://github.com/calejvaldez/chalubot/)|Communicating with the BS3D API|
-|HTML/[SCSS](https://sass-lang.com)/[TypeScript](https://www.typescriptlang.org)|Frontend|
-|[Figma](https://www.figma.com)|Frontend design|
+The website is built using:
+
+- [Render](https://render.com/)
+- [Flask](https://flask.palletsprojects.com/en/)
+- HTML, [Sass](https://sass-lang.com)
+
+## Installation
+
+Here are links to install...
+
+- [Flask](https://flask.palletsprojects.com/en/2.3.x/installation/#install-flask) (All the way at the bottom, "Install Flask")
+- [Sass](https://sass-lang.com/install/)
+
+## What's next?
+
+The more the website grows, the more I'll add to this document. For now, since there's no backend, this is all you need to know.
