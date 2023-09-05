@@ -96,3 +96,27 @@ footer {
 .heading-text-blue {
     @include header-text($DARKBLUE);
 }
+
+.human-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: $WHITE;
+    color: $BLACK;
+
+    margin: 35px 0;
+    padding: 35px;
+}
+
+.photo-container {
+    border: 2px solid $BLACK;
+    padding: 20px 5px;
+    margin: 0 35px;
+
+    text-align: center;
+    max-height: 400px;
+}
+
+.text-container {
+    max-width: 500px;
+}
