@@ -7,7 +7,8 @@
 import os
 
 # include the .scss files you're working on here
-SASS_FILES = []
+SASS_FILES = ['index']
+assert len(SASS_FILES), "quick_reload.py: SASS_FILES cannot be empty."
 
 
 def reload():
