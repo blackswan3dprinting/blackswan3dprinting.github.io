@@ -16,6 +16,27 @@ $QUALITYIMAGE: url(../images/quality.jpg) no-repeat center center fixed;
     flex-direction: column;
 }
 
+@mixin header-text($underline-color) {
+    padding: 60px 0 0 30px;
+    text-decoration-line: underline;
+    text-decoration-color: $underline-color;
+}
+
+#showcase-inner-instagram {
+    @include FLEXCOL();
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.showcase {
+    color: $BLACK;
+    background-color: $WHITE;
+    height: 600px;
+
+    margin: 40px 0;
+}
+
 body {
     color: $WHITE;
     background-color: $BLACK;
@@ -84,7 +105,9 @@ footer {
 }
 
 #rare-quality-text {
-    padding: 60px 0 0 30px;
-    text-decoration-line: underline;
-    text-decoration-color: $YELLOW;
+    @include header-text($YELLOW);
+}
+
+.heading-text-blue {
+    @include header-text($DARKBLUE);
 }
