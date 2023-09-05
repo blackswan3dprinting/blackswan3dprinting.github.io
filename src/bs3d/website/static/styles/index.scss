@@ -4,6 +4,7 @@ $BLACK: black;
 $WHITE: white;
 
 $FONT: Georgia, 'Times New Roman', Times, serif;
+$QUALITYIMAGE: url(../images/quality.jpg) no-repeat center center fixed;
 
 @mixin FLEXROW{
     display: flex;
@@ -74,4 +75,16 @@ footer {
   
 .footer-socials-logo {
     margin: 0 25px;
+}
+
+#rare-quality {
+    background: $QUALITYIMAGE;
+    background-size: cover;
+    height: 500px;
+}
+
+#rare-quality-text {
+    padding: 60px 0 0 30px;
+    text-decoration-line: underline;
+    text-decoration-color: $YELLOW;
 }
