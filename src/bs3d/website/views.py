@@ -10,9 +10,9 @@ bp = Blueprint('website', __name__,
                static_folder='static')
 
 
-@bp.route('/')
+@bp.route('/showcase/')
 def index():
-    return render_template('index.html')
+    return render_template('showcase.html')
 
 @bp.route("/about/")
 def about():
