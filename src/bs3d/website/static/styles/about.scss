@@ -15,6 +15,12 @@ $FONT: Georgia, 'Times New Roman', Times, serif;
     flex-direction: column;
 }
 
+@mixin header-text($underline-color) {
+    padding: 60px 0 0 30px;
+    text-decoration-line: underline;
+    text-decoration-color: $underline-color;
+}
+
 body {
     color: $WHITE;
     background-color: $BLACK;
@@ -74,4 +80,39 @@ footer {
   
 .footer-socials-logo {
     margin: 0 25px;
+}
+
+#our-mission {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    color: $BLACK;
+
+    padding: 35px 0;
+
+    background-color: $WHITE;
+}
+
+#mission-text {
+
+    margin: 0 20px;
+
+    word-wrap: break-word;
+    flex: 2;
+
+    h1 {
+        @include header-text($DARKBLUE)
+    }
+}
+
+#joseph-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: purple;
+    height: 300px;
+    width: 300px;
+
+    border-radius: 0 20px 20px 0;
 }
