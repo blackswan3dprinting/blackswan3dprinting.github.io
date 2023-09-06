@@ -104,6 +104,8 @@ footer {
     background-color: $WHITE;
     color: $BLACK;
 
+    justify-content: center;
+
     margin: 35px 0;
     padding: 35px;
 }
@@ -118,5 +120,11 @@ footer {
 }
 
 .text-container {
-    max-width: 500px;
+    flex: 3;
+    min-width: 300px;
+    word-wrap: break-word;
+
+    @media only screen and (max-width: 600px) {
+        text-align: center;
+    } 
 }
