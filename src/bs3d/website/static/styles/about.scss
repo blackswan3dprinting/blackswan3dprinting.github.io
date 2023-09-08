@@ -50,6 +50,9 @@ $QUALITYIMAGE: url(../images/quality.jpg) no-repeat center center fixed;
     height: 500px;
 
     @media only screen and (max-width: 600px) {
+        background-image: none;
+        background-color: $BLACK;
+        height: 300px;
         display: flex;
         flex-direction: row;
 
