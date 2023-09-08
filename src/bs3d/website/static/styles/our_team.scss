@@ -117,6 +117,10 @@ footer {
 
 .footer-socials-colors {
     filter: brightness(0) invert(1);
+
+    &:hover {
+        filter: brightness(0) saturate(100%) invert(81%) sepia(98%) saturate(400%) hue-rotate(333deg) brightness(104%) contrast(91%);
+    }
 }
 
 #footer-socials {
