@@ -4,6 +4,7 @@ $BLACK: black;
 $WHITE: white;
 
 $FONT: Georgia, 'Times New Roman', Times, serif;
+$QUALITYIMAGE: url(../images/quality.jpg) no-repeat center center fixed;
 
 @mixin FLEXROW{
     display: flex;
@@ -19,6 +20,16 @@ $FONT: Georgia, 'Times New Roman', Times, serif;
     padding: 60px 0 0 30px;
     text-decoration-line: underline;
     text-decoration-color: $underline-color;
+}
+
+#rare-quality {
+    background: $QUALITYIMAGE;
+    background-size: cover;
+    height: 500px;
+}
+
+#rare-quality-text {
+    @include header-text($YELLOW);
 }
 
 body {
