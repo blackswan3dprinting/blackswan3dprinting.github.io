@@ -205,3 +205,23 @@ footer {
         height: 100%;
     }
 }
+
+.header-button {
+    height: 20px;
+    width: auto;
+
+    margin: 20px;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        a {
+            color: $YELLOW;
+        }
+    }
+}
