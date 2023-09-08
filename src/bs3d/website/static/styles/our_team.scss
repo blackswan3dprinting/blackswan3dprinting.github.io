@@ -20,9 +20,51 @@ $QUALITYIMAGE: url(../images/quality.jpg) no-repeat center center fixed;
     padding: 60px 0 0 30px;
     text-decoration-line: underline;
     text-decoration-color: $underline-color;
+
+    @media only screen and (min-width: 992px) {
+        @if $underline-color == $YELLOW {
+            font-size: 45px;
+        } @else {
+            font-size: 35px;
+        }
+        
+    }
+
+    @media only screen and (max-width: 600px) {
+        @if $underline-color == $YELLOW {
+            padding: 0;
+        } @else {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 0 0 0;
+        }
+    }
+}
+
+#rare-quality {
+    background: $QUALITYIMAGE;
+    background-size: cover;
+    height: 500px;
+
+    @media only screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+#rare-quality-text {
+    @include header-text($YELLOW);
 }
 
 body {
+    margin: 0;
     color: $WHITE;
     background-color: $BLACK;
     font-family: $FONT;
@@ -81,16 +123,6 @@ footer {
   
 .footer-socials-logo {
     margin: 0 25px;
-}
-
-#rare-quality {
-    background: $QUALITYIMAGE;
-    background-size: cover;
-    height: 500px;
-}
-
-#rare-quality-text {
-    @include header-text($YELLOW);
 }
 
 .heading-text-blue {
