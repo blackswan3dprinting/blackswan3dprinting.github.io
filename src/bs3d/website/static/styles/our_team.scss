@@ -140,6 +140,10 @@ footer {
 
     margin: 35px 0;
     padding: 35px;
+
+    @media only screen and (min-width: 992px) {
+        padding: 35px 200px;
+    }
 }
 
 .photo-container {
@@ -148,7 +152,7 @@ footer {
     margin: 0 35px;
 
     text-align: center;
-    max-height: 400px;
+    height: 300px
 }
 
 .text-container {
