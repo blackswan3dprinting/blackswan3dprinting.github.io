@@ -5,6 +5,7 @@ $WHITE: white;
 
 $FONT: Georgia, 'Times New Roman', Times, serif;
 $QUALITYIMAGE: url(../images/quality.jpg) no-repeat center center fixed;
+$QUALITYIMAGE_MOBILE: url(../images/quality.jpg) no-repeat center center scroll;
 
 @mixin FLEXROW{
     display: flex;
@@ -47,10 +48,10 @@ $QUALITYIMAGE: url(../images/quality.jpg) no-repeat center center fixed;
 #rare-quality {
     background: $QUALITYIMAGE;
     background-size: cover;
-    -webkit-background-size: cover;
     height: 500px;
 
     @media only screen and (max-width: 600px) {
+        background: $QUALITYIMAGE_MOBILE;
         display: flex;
         flex-direction: row;
 
