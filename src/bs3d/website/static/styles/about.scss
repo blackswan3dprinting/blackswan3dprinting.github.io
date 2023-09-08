@@ -47,6 +47,7 @@ $QUALITYIMAGE: url(../images/quality.jpg) no-repeat center center fixed;
 #rare-quality {
     background: $QUALITYIMAGE;
     background-size: cover;
+    -webkit-background-size: cover;
     height: 500px;
 
     @media only screen and (max-width: 600px) {
