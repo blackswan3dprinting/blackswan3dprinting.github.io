@@ -156,4 +156,20 @@ footer a:hover {
   }
 }
 
+.header-button {
+  height: 20px;
+  width: auto;
+  margin: 20px;
+}
+.header-button a {
+  text-decoration: none;
+  color: white;
+}
+.header-button:hover {
+  cursor: pointer;
+}
+.header-button:hover a {
+  color: #F4E04D;
+}
+
 /*# sourceMappingURL=showcase.css.map */
