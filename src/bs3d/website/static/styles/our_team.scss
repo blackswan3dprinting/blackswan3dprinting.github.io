@@ -18,14 +18,14 @@ $QUALITYIMAGE: url(../images/quality.jpg) no-repeat center center fixed;
 
 @mixin header-text($underline-color) {
     padding: 60px 0 0 30px;
-    text-decoration-line: underline;
-    text-decoration-color: $underline-color;
 
     @media only screen and (min-width: 992px) {
-        @if $underline-color == $YELLOW {
-            font-size: 45px;
-        } @else {
+        @if $underline-color == $DARKBLUE {
             font-size: 35px;
+            text-decoration-line: underline;
+            text-decoration-color: $underline-color;
+        } @else {
+            font-size: 45px;
         }
         
     }

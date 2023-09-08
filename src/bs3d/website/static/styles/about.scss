@@ -18,14 +18,14 @@ $QUALITYIMAGE: url(../images/quality.jpg) no-repeat center center fixed;
 
 @mixin header-text($underline-color) {
     padding: 60px 0 0 30px;
-    text-decoration-line: underline;
-    text-decoration-color: $underline-color;
 
     @media only screen and (min-width: 992px) {
-        @if $underline-color == $YELLOW {
-            font-size: 45px;
-        } @else {
+        @if $underline-color == $DARKBLUE {
             font-size: 35px;
+            text-decoration-line: underline;
+            text-decoration-color: $underline-color;
+        } @else {
+            font-size: 45px;
         }
         
     }
@@ -130,22 +130,25 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
 
+    justify-content: center;
+
     color: $BLACK;
 
-    padding: 35px 0;
+    padding: 35px;
 
     background-color: $WHITE;
 }
 
 #mission-text {
-
     margin: 0 20px;
-
     word-wrap: break-word;
-    flex: 2;
+    text-align: center;
+    font-size: 20px;
 
     h1 {
-        @include header-text($DARKBLUE)
+        @include header-text($DARKBLUE);
+        padding: 0px;
+        font-size: 28px;
     }
 }
 
@@ -214,4 +217,13 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.photo-container {
+    border: 2px solid $BLACK;
+    padding: 20px 5px;
+    margin: 0 35px;
+
+    text-align: center;
+    height: 300px
 }
