@@ -50,3 +50,5 @@ If you'd like to know if you're being specific enough, you can use this template
 ## Conclusion
 
 This concludes the GitHub issues guidelines. Please make sure to follow them as much as you can for productivity's sake. Thanks!
+
+Need more help? Watch [this video](https://www.youtube.com/watch?v=TKJ4RdhyB5Y)!
