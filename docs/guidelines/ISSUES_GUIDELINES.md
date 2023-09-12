@@ -1,5 +1,7 @@
 # Contributer Issue Guidelines
 
+![Black Swan Docs header](/.github/docs_header.png)
+
 Welcome to the Contributer Issue Guidelines. This document is meant to explain how to add an issue to this repository so that the Black Swan developers know what to code.
 
 ## What is an Issue?
