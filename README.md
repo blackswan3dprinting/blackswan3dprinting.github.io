@@ -2,6 +2,8 @@
 
 Welcome to the [blackswan3d.com](https://blackswan3d.com) repository. This document will serve as the documentation for the website in case future developers need to edit the website.
 
+⚠️ The BS3D Docs are still under development. Some of the content may change.
+
 ## Software/Tools
 
 The website is built using:
