@@ -29,6 +29,11 @@ $FONT: Georgia, 'Times New Roman', Times, serif;
     color: $color_on_hover;
     cursor: pointer;
 }
+
+@mixin clear_link_defaults($text_color: $WHITE) {
+    color: $text_color;
+    text-decoration: none;
+}
 ```
 
 ## Header
@@ -111,8 +116,7 @@ footer {
     text-align: center;
 
     a {
-        color: $WHITE;
-        text-decoration: none;
+        @include clear_link_defaults();
         &:hover {
             @include clickable();
         }
