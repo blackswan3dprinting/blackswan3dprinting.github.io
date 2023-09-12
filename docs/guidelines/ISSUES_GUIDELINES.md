@@ -6,11 +6,15 @@ Welcome to the Contributer Issue Guidelines. This document is meant to explain h
 
 ## What is an Issue?
 
+![Screenshot of Issues tab](/.github/issues_guidelines_image1.png)
+
 A GitHub issue can be said to be a "ticket". For example, did you notice there's a bug? You can open an issue. Do you want a feature? Open an issue!
 
 However, issues are only useful if we all understand how to use them. So, let's go over some basics.
 
 ## Basic Elements
+
+![Screenshot of a new issue](/.github/issues_guidelines_image2.png)
 
 ### Labels
 
