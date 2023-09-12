@@ -1,8 +1,8 @@
 # blackswan3d.com
 
-Welcome to the [blackswan3d.com](https://blackswan3d.com) repository. This document will serve as the documentation for the website in case future developers need to edit the website.
+![Black Swan Docs header](/.github/docs_header.png)
 
-⚠️ The BS3D Docs are still under development. Some of the content may change.
+Welcome to the [blackswan3d.com](https://blackswan3d.com) repository. This is the code behind our website and server.
 
 ## Software/Tools
 
@@ -10,23 +10,8 @@ The website is built using:
 
 - [Render](https://render.com/)
 - [Flask](https://flask.palletsprojects.com/en/)
-- HTML, [Sass](https://sass-lang.com), [TypeScript](https://www.typescriptlang.org)
+- HTML, [Sass](https://sass-lang.com), and (soon) [TypeScript](https://www.typescriptlang.org)
 
-## Installation
+## Repository Information
 
-Here are links to install...
-
-- [Flask](https://flask.palletsprojects.com/en/2.3.x/installation/#install-flask) (All the way at the bottom, "Install Flask")
-- [Sass](https://sass-lang.com/install/)
-- [TypeScript](https://www.typescriptlang.org/download)
-
-I'd prefer you get the instructions from their official websites rather than I provide you with instructions that may become outdated at some point.
-
-## Cool tools
-
-- [Sass Cheatsheet](https://quickref.me/sass)
-- [HTTP Status Code Cheatsheet](https://quickref.me/http-status-code) (consistency is important)
-
-## What's next?
-
-The more the website grows, the more I'll add to this document. For now, since there's no backend, this is all you need to know.
+Want to know where to begin? Read documentation! If you'd like to contribute to the repository, please read the [Issue Contribution Guidelines](https://github.com/blackswan3dprinting/blackswan3d.com/blob/main/docs/guidelines/ISSUES_GUIDELINES.md). If you're a developer that needs to look into the design of the website with code samples, look at the [BS3D Design System](https://github.com/blackswan3dprinting/blackswan3d.com/blob/main/docs/design/BS3D_DESIGN_SYSTEM.md) document. There will be a lot of attempts to keep as much documentation as possible, so please read! Thanks!
