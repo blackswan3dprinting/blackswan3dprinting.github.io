@@ -46,3 +46,8 @@ $FONT: Georgia, 'Times New Roman', Times, serif;
         }
     }
 }
+
+@mixin SPACE_FOR_SECTION() {
+    margin: 35px 0;
+    padding: 35px;
+}
