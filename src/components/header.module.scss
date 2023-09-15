@@ -1,0 +1,30 @@
+$YELLOW: #F4E04D;
+$WHITE: white;
+
+.header {
+    background-color: black;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header_menu_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_button {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: $WHITE;
+
+    &:hover {
+        cursor: pointer;
+        color: $YELLOW;
+    }
+}
