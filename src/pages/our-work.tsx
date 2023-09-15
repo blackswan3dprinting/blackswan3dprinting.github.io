@@ -1,5 +1,7 @@
 import Head from "next/head";
+import { EtsyListing } from "../components/etsy_listing";
 import Layout from "../components/layout"
+import styles from "../styles/our_work.module.scss"
 import { UnderHeaderText } from "../components/under_header_text"
 
 export default function OurWork() {
@@ -31,6 +33,15 @@ export default function OurWork() {
 
 
             <UnderHeaderText text="OUR WORK"/>
+            <div id={styles.etsy_container}>
+                <h1>Our Etsy Shop</h1>
+                
+                <div id={styles.listings_container}>
+                <EtsyListing name="Printing Your Idea" desc="Have a part for a project your working on? You can benefit from the analysis and the development of having Computer Aided modeling. Create more visual representations of your idea for production and troubleshooting. Improving overall design quality. Need a promotional product for your club, business or organization? Black Swan 3D Printing can help! Using our services allows you to create more custom PLA keychains, Coasters, even signs." url="https://www.etsy.com/listing/1561453537/" />
+                <EtsyListing name="Printing your STL File" desc="Take advantage of our printing service and print a personal STL file out. Great for those who have who have prototyped digitally modelled. Additionally, its great for those who purchase a prop file or don't have their own 3D printer." url="https://www.etsy.com/listing/1547874520/" />
+                </div>
+
+            </div>
         </Layout>
     )
 }
