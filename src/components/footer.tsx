@@ -1,4 +1,4 @@
-import styles from "./footer.module.scss"
+import styles from "../styles/footer.module.scss"
 import Image from "next/image"
 
 function LinkToSocial( {photo_path, alt_text, value} ) {

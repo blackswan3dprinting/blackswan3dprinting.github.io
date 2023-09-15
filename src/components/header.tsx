@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./header.module.scss"
+import styles from "../styles/header.module.scss"
 
 function HeaderButton( props: {link: string, label: string} ) {
     return (
