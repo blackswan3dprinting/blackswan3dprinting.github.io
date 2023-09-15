@@ -25,3 +25,57 @@
         font-size: 28px;
     }
 }
+
+#history {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+
+    background-color: constants.$WHITE;
+    color: constants.$BLACK;
+
+    @include constants.SPACE_FOR_SECTION();
+
+    h3 {
+        font-weight: normal;
+    }
+
+    p {
+        text-align: center;
+        margin: 0 50px;
+
+        @media only screen and (min-width: 992px) {
+            margin: 0 200px;
+        }
+    }
+}
+
+#joseph_swan_quote {
+    min-width: 250px;
+    max-width: 450px;
+
+    padding: 20px;
+    border: 1px solid constants.$BLACK;
+    border-radius: 10px;
+
+    text-align: center;
+
+    margin: 20px 10px;
+
+    h3 {
+        font-style: italic;
+    }
+}
+
+#company_history {
+    text-decoration-line: underline;
+    text-decoration-color: constants.$BLUE;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
