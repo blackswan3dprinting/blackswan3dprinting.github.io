@@ -1,0 +1,15 @@
+$YELLOW: #F4E04D;
+$WHITE: white;
+$BLACK: black;
+
+@mixin clickable_text($color_not_clicked, $color_clicked) {
+    // clear defaults
+    text-decoration: none;
+    color: $color_not_clicked;
+
+    &:hover {
+        // add clickable look
+        cursor: pointer;
+        color: $color_clicked;
+    }
+}

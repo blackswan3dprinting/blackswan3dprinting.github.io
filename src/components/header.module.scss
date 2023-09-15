@@ -1,8 +1,7 @@
-$YELLOW: #F4E04D;
-$WHITE: white;
+@use "../styles/constants";
 
 .header {
-    background-color: black;
+    background-color: constants.$BLACK;
     padding: 15px;
 
     display: flex;
@@ -20,11 +19,6 @@ $WHITE: white;
 
 .header_button {
     padding: 10px 15px;
-    text-decoration: none;
-    color: $WHITE;
 
-    &:hover {
-        cursor: pointer;
-        color: $YELLOW;
-    }
+    @include constants.clickable_text(constants.$WHITE, constants.$YELLOW);
 }
