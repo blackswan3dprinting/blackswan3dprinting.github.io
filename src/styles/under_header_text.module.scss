@@ -1,0 +1,23 @@
+@use "./constants.scss";
+
+#under_header_container {
+    background: url(/images/quality.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 500px;
+
+    @media only screen and (max-width: 600px) {
+        background-image: none;
+        background-color: constants.$BLACK;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+#under_header_text {
+    @include constants.HEADING_TEXT(constants.$WHITE, constants.$YELLOW);
+}

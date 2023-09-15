@@ -4,7 +4,6 @@ $BLACK: black;
 $WHITE: white;
 
 $FONT: Georgia, 'Times New Roman', Times, serif;
-$UNDER_HEADER_IMAGE: url(/images/quality.jpg) no-repeat center center fixed;
 
 @mixin CLICKABLE_TEXT($color_not_clicked, $color_clicked) {
     // clear defaults
@@ -18,11 +17,13 @@ $UNDER_HEADER_IMAGE: url(/images/quality.jpg) no-repeat center center fixed;
     }
 }
 
-@mixin UNDER_HEADER_TEXT($underline-color) {
+@mixin HEADING_TEXT($text_color, $underline-color) {
+    color: $text_color;
     padding: 60px 0 0 30px;
+    margin: 0;
 
     @media only screen and (min-width: 992px) {
-        @if $underline-color == $DARKBLUE {
+        @if $underline-color == $BLUE {
             font-size: 35px;
             text-decoration-line: underline;
             text-decoration-color: $underline-color;
