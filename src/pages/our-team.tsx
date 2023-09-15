@@ -1,6 +1,7 @@
 import Layout from "../components/layout"
 import styles from "../styles/our_team.module.scss"
 import Image from "next/image";
+import Head from "next/head";
 import { UnderHeaderText } from "../components/under_header_text"
 import { Employee } from "../components/employee"
 
@@ -25,6 +26,31 @@ function BuildLinkContainer(props: {type: "email" | "external", label: string, v
 export default function OurTeam() {
     return (
         <Layout>
+            <Head>
+                <title>Our Team — Black Swan 3D Printing</title>
+                <meta name="title" content="Our Team — Black Swan 3D Printing" />
+                <meta name="description" content="Take a look at the faces behind the Black Swan 3D Printing operation! These individuals work tirelessly while in college to provide you with the best quality!" />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://blackswan3d.com/our-team/" />
+                <meta property="og:title" content="Our Team — Black Swan 3D Printing" />
+                <meta property="og:description" content="Take a look at the faces behind the Black Swan 3D Printing operation! These individuals work tirelessly while in college to provide you with the best quality!" />
+                <meta property="og:image" content="/images/header.png" />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://blackswan3d.com/our-team/" />
+                <meta property="twitter:title" content="Our Team — Black Swan 3D Printing" />
+                <meta property="twitter:description" content="Take a look at the faces behind the Black Swan 3D Printing operation! These individuals work tirelessly while in college to provide you with the best quality!" />
+                <meta property="twitter:image" content="/images/header.png" />
+
+
+                <link rel="stylesheet" href='/static/styles/our_team.css'/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <link rel="icon" href="/images/favicon.ico" sizes="any"/>
+                <link rel="icon" href="/images/favicon.svg" type="image/svg+xml"/>
+            </Head>
+
+
             <UnderHeaderText text="OUR TEAM"/>
 
             <div className={styles.employee_container} >
