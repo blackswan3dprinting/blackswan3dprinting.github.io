@@ -1,8 +1,12 @@
 $YELLOW: #F4E04D;
-$WHITE: white;
+$BLUE: #050E36;
 $BLACK: black;
+$WHITE: white;
 
-@mixin clickable_text($color_not_clicked, $color_clicked) {
+$FONT: Georgia, 'Times New Roman', Times, serif;
+$UNDER_HEADER_IMAGE: url(/images/quality.jpg) no-repeat center center fixed;
+
+@mixin CLICKABLE_TEXT($color_not_clicked, $color_clicked) {
     // clear defaults
     text-decoration: none;
     color: $color_not_clicked;
@@ -11,5 +15,33 @@ $BLACK: black;
         // add clickable look
         cursor: pointer;
         color: $color_clicked;
+    }
+}
+
+@mixin UNDER_HEADER_TEXT($underline-color) {
+    padding: 60px 0 0 30px;
+
+    @media only screen and (min-width: 992px) {
+        @if $underline-color == $DARKBLUE {
+            font-size: 35px;
+            text-decoration-line: underline;
+            text-decoration-color: $underline-color;
+        } @else {
+            font-size: 45px;
+        }
+        
+    }
+
+    @media only screen and (max-width: 600px) {
+        @if $underline-color == $YELLOW {
+            padding: 0;
+        } @else {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 0 0 0;
+        }
     }
 }
