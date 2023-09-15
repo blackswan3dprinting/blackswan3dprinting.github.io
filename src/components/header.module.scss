@@ -20,5 +20,5 @@
 .header_button {
     padding: 10px 15px;
 
-    @include constants.clickable_text(constants.$WHITE, constants.$YELLOW);
+    @include constants.CLICKABLE_TEXT(constants.$WHITE, constants.$YELLOW);
 }
