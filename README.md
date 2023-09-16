@@ -4,6 +4,14 @@
 
 Welcome to the [blackswan3d.com](https://blackswan3d.com) repository. This is the code behind our website and server.
 
-## Stability Notice
+## Software/Tools
 
-This branch is undergoing heavy modification due to the transition to ReactJS. **Do not merge to main under any circumstances.**
+The website is built using:
+
+- [Render](https://render.com/)
+- [React](https://react.dev)
+- HTML, [Sass](https://sass-lang.com), and [TypeScript](https://www.typescriptlang.org)
+
+## Repository Information
+
+More in depth documentation will be coming soon. Thanks!
