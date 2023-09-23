@@ -47,7 +47,15 @@ export default function GitHubIssues() {
                 <div id={styles.submission_container}>
                     <Image id={styles.chalubot} src="/images/chalubot.svg" alt="Image of ChaluBot" height="150" width="150"></Image>
 
-                    <TextSubmission type="text" label="Name" placeholder="Joseph S." autocomplete="name" />
+                    <label className={styles.input_label}>
+                        Please select your name.
+                        <select>
+                            <option hidden>Select an option:</option>
+                            <option>Joseph S.</option>
+                            <option>Isaiah S.</option>
+                            <option>Carlos V.</option>
+                        </select>
+                    </label>
 
                     <label className={styles.input_label}>
                         What are you submitting?
@@ -70,7 +78,11 @@ export default function GitHubIssues() {
                         </select>
                     </label>
 
-                    <TextSubmission type="text" label="What feature/bug fix would you like?" placeholder="Let us feed birb on the website!" autocomplete="off"/>
+                    <label className={styles.input_label}>
+                        What feature/bug fix would you like?
+                        <textarea wrap="hard" id={styles.desc} placeholder="Let us feed birb on the website!" autoComplete="off"/>
+                    </label>
+
                     <TextSubmission type="date" label="When should we get this done by?" placeholder="Select a date:" autocomplete="off"/>
 
                     <button>Submit</button>
