@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { EtsyListing } from "./etsy_listing";
-import Layout from "../layout"
 import styles from "../../styles/our_work.module.scss"
 import { UnderHeaderText } from "../under_header_text"
 

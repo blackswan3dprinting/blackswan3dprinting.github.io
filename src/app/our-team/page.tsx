@@ -1,4 +1,3 @@
-import Layout from "../layout"
 import styles from "../../styles/our_team.module.scss"
 import Image from "next/image";
 import Head from "next/head";

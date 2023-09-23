@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Layout from "../layout"
 import { UnderHeaderText } from "../under_header_text"
 import { Employee } from "../employee"
 import styles from "../../styles/about.module.scss"

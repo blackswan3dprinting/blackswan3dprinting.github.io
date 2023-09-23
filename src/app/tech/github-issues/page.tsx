@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Layout from "../../layout"
 import Image from "next/image";
 import styles from "../../../styles/tech-github-issues.module.scss"
 
