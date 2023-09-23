@@ -1,12 +1,12 @@
 import Head from "next/head";
-import { EtsyListing } from "../components/etsy_listing";
-import Layout from "../components/layout"
-import styles from "../styles/our_work.module.scss"
-import { UnderHeaderText } from "../components/under_header_text"
+import { EtsyListing } from "./etsy_listing";
+import Layout from "../layout"
+import styles from "../../styles/our_work.module.scss"
+import { UnderHeaderText } from "../under_header_text"
 
 export default function OurWork() {
     return (
-        <Layout>
+        <div>
             <Head>
                 <title>Black Swan 3D Printing — Showcasing our 3D Prints</title>
                 <meta name="title" content="Black Swan 3D Printing — Showcasing our 3D Prints" />
@@ -42,6 +42,6 @@ export default function OurWork() {
                 </div>
 
             </div>
-        </Layout>
+        </div>
     )
 }

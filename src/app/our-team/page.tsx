@@ -1,13 +1,13 @@
-import Layout from "../components/layout"
-import styles from "../styles/our_team.module.scss"
+import Layout from "../layout"
+import styles from "../../styles/our_team.module.scss"
 import Image from "next/image";
 import Head from "next/head";
-import { UnderHeaderText } from "../components/under_header_text"
-import { Employee } from "../components/employee"
+import { UnderHeaderText } from "../under_header_text"
+import { Employee } from "../employee"
 
 
 function BuildLinkContainer(props: {type: "email" | "external", label: string, value: string}) {
-    let path_to_image;
+    let path_to_image: string;
     if (props.type == "email") {
         path_to_image = "/images/icon_mail.svg";
     } else {
@@ -25,7 +25,7 @@ function BuildLinkContainer(props: {type: "email" | "external", label: string, v
 
 export default function OurTeam() {
     return (
-        <Layout>
+        <div>
             <Head>
                 <title>Our Team — Black Swan 3D Printing</title>
                 <meta name="title" content="Our Team — Black Swan 3D Printing" />
@@ -93,6 +93,6 @@ export default function OurTeam() {
                     <BuildLinkContainer type="email" label="calejvaldez@blackswan3d.com" value="mailto:calejvaldez@blackswan3d.com" />
                 </div>
             </div>
-        </Layout>
+        </div>
     )
 }

@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Layout from "../../components/layout"
+import Layout from "../../layout"
 import Image from "next/image";
-import styles from "../../styles/tech-github-issues.module.scss"
+import styles from "../../../styles/tech-github-issues.module.scss"
 
 
 function TextSubmission(props: {type: "text" | "date", label: string, placeholder: string, autocomplete: "name" | "off"}) {
@@ -15,7 +15,7 @@ function TextSubmission(props: {type: "text" | "date", label: string, placeholde
 
 export default function GitHubIssues() {
     return (
-        <Layout>
+        <div>
             <Head>
                 <title>Submit a GitHub Issue — Black Swan 3D Printing</title>
                 <meta name="title" content="Submit a GitHub Issue — Black Swan 3D Printing" />
@@ -79,6 +79,6 @@ export default function GitHubIssues() {
                 </div>
             </div>
             
-        </Layout>
+        </div>
     )
 }
