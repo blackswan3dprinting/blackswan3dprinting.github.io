@@ -1,6 +1,36 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../../../styles/tech-github-issues.module.scss"
+import * as fs from 'fs';
+import { Octokit } from "octokit";
+import { createAppAuth } from "@octokit/auth-app"
+
+
+async function octokitUse() {
+    
+    const pk = fs.readFileSync("chalubot.pem");
+
+
+    console.log(pk.toString())
+
+
+    const installationOctokit = new Octokit({
+        authStrategy: createAppAuth,
+        auth: {
+          appId: 1,
+          privateKey: pk.toString(),
+          installationId: 1,
+        },
+      });
+      
+      // transparently creates an installation access token the first time it is needed
+      // and refreshes it when it expires
+      return await installationOctokit.request("POST /repos/blackswan3dprinting/blackswan3d.com/issues", {
+        owner: "blackswan3dprinting",
+        repo: "blackswan3d.com",
+        title: "Experimenting!",
+      });
+}
 
 
 function TextSubmission(props: {type: "text" | "date", label: string, placeholder: string, autocomplete: "name" | "off"}) {
@@ -13,6 +43,7 @@ function TextSubmission(props: {type: "text" | "date", label: string, placeholde
 }
 
 export default function GitHubIssues() {
+    // octokitUse(); THIS WORKED
     return (
         <div>
             <Head>
@@ -84,8 +115,6 @@ export default function GitHubIssues() {
                     </label>
 
                     <TextSubmission type="date" label="When should we get this done by?" placeholder="Select a date:" autocomplete="off"/>
-
-                    <button>Submit</button>
             
                 </div>
             </div>
