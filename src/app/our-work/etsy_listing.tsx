@@ -1,4 +1,4 @@
-import styles from "../styles/etsy_listing.module.scss"
+import styles from "../../styles/etsy_listing.module.scss"
 
 export function EtsyListing(props: {name: string, desc: string, url: string}) {
     return (

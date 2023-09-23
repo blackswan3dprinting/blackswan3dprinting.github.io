@@ -1,10 +1,10 @@
-import Layout from "../../components/layout";
+import Layout from "../../layout";
 import Head from "next/head";
-import styles from "../../styles/tech_chalubot.module.scss"
+import styles from "../../../styles/tech_chalubot.module.scss"
 
 export default function ChaluBot() {
     return (
-        <Layout>
+        <div>
             <Head>
                 <title>ChaluBot — Black Swan 3D Printing</title>
                 <meta name="title" content="ChaluBot — Black Swan 3D Printing" />
@@ -71,6 +71,6 @@ export default function ChaluBot() {
             <div id={styles.bestest}>
                 <h3>ChaluBot's the bestest!</h3>
             </div>
-        </Layout>
+        </div>
     )
 }

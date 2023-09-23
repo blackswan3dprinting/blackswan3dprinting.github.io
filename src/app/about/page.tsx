@@ -1,12 +1,12 @@
 import Head from "next/head";
-import Layout from "../components/layout"
-import { UnderHeaderText } from "../components/under_header_text"
-import { Employee } from "../components/employee"
-import styles from "../styles/about.module.scss"
+import Layout from "../layout"
+import { UnderHeaderText } from "../under_header_text"
+import { Employee } from "../employee"
+import styles from "../../styles/about.module.scss"
 
 export default function About() {
     return (
-        <Layout>
+        <div>
             <Head>
                 <title>About Us — Black Swan 3D Printing</title>
                 <meta name="title" content="About Us — Black Swan 3D Printing" />
@@ -61,6 +61,6 @@ export default function About() {
                 <p>Since Black Swan's inception, I have made several models and prints for friends, family, clubs, and organizations. Additionally, Black Swan 3D Printing has grown to include more staff to aid in all aspects of the business. Enabling the growth of several engineers and artists in our pursuits. I started this venture in hopes of showing off my work and designs. To implement techniques and materials of high quality. Not unlike a black swan.</p>
 
             </div>
-        </Layout>
+        </div>
     )
 }
