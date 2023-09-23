@@ -3,3 +3,5 @@ __pycache__
 quick_reload.py
 node_modules
 .next
+*.pem
+.DS_Store
