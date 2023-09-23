@@ -1,4 +1,3 @@
-import Layout from "../../layout";
 import Head from "next/head";
 import styles from "../../../styles/tech_chalubot.module.scss"
 
