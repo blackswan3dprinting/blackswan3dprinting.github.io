@@ -10,10 +10,6 @@ async function octokitUse() {
     
     const pk = fs.readFileSync("chalubot.pem");
 
-
-    console.log(pk.toString())
-
-
     const installationOctokit = new Octokit({
         authStrategy: createAppAuth,
         auth: {
