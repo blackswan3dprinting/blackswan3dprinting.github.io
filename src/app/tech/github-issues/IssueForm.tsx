@@ -63,6 +63,7 @@ export function IssueForm() {
                     <option value="https://blackswan3d.com/about/">"About Us" page</option>
                     <option value="https://blackswan3d.com/our-work/">"Our work" page</option>
                     <option value="https://blackswan3d.com/our-team/">"Our Team" page</option>
+                    <option value="https://blackswan3d.com/tech/github-issues/">"GitHub Issues" page</option>
                     <option value="New page">I'm requesting a new page</option>
                     <option value="N/A">N/A</option>
                 </select>
