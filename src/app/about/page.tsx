@@ -1,36 +1,20 @@
-import Head from "next/head";
+import { Metadata } from "next"
 import { UnderHeaderText } from "../under_header_text"
 import { Employee } from "../employee"
 import styles from "../../styles/about.module.scss"
 
+export const metadata: Metadata = {
+    title: "About Us — Black Swan 3D Printing",
+    description: "Learn more about the company that provides high-quality 3D printed works.",
+    twitter: { card: "summary_large_image", site: "https://blackswan3d.com/about/", images: "https://blackswan3d.com/images/header.png" },
+    openGraph: {type: 'website', url: 'https://blackswan3d.com/about/', images: "https://blackswan3d.com/images/header.png"},
+    viewport: "width=device-width, initial-scale=1",
+    icons: [{ rel: "icon", url: "/images/favicon.ico", sizes: "any" }, { rel: "icon", url: "/images/favicon.svg", type: "images/svg+xml" }]
+}
+
 export default function About() {
     return (
         <div>
-            <Head>
-                <title>About Us — Black Swan 3D Printing</title>
-                <meta name="title" content="About Us — Black Swan 3D Printing" />
-                <meta name="description" content="Learn more about the company that provides high-quality 3D printed works." />
-
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://blackswan3d.com/about/" />
-                <meta property="og:title" content="About Us — Black Swan 3D Printing" />
-                <meta property="og:description" content="Learn more about the company that provides high-quality 3D printed works." />
-                <meta property="og:image" content="/images/header.png" />
-
-                <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://blackswan3d.com/about/" />
-                <meta property="twitter:title" content="About Us — Black Swan 3D Printing" />
-                <meta property="twitter:description" content="Learn more about the company that provides high-quality 3D printed works." />
-                <meta property="twitter:image" content="/images/header.png" />
-
-
-                <link rel="stylesheet" href='/static/styles/about.css'/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <link rel="icon" href="/images/favicon.ico" sizes="any"/>
-                <link rel="icon" href="/images/favicon.svg" type="image/svg+xml"/>
-            </Head>
-
-
             <UnderHeaderText text="ABOUT US"/>
 
             <div id={styles.our_mission}>
