@@ -4,6 +4,14 @@ import { useState } from "react"
 import styles from "../../../styles/tech-github-issues.module.scss"
 
 function sendForm(name: string, label: string, page: string, content: string, date: string) {
+    let b = document.getElementById("submit") as HTMLButtonElement;
+
+    b.textContent = "LOADING..."
+    b.disabled = true;
+
+    let d = new Date(date.replace(/-/g, '\/'));
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
     fetch('/tech/github-issues/api/',
     {
         method: 'POST',
@@ -12,8 +20,10 @@ function sendForm(name: string, label: string, page: string, content: string, da
             "label": label,
             "page": page,
             "content": content,
-            "date": date
+            "date": `${weekdays[d.getDay()]} (${d.getMonth()}/${d.getDate()})`
         })
+    }).then((d) => {
+        window.location.reload();
     })
 }
 
@@ -68,7 +78,7 @@ export function IssueForm() {
                 <input value={date} onChange={(e) => {setDate(e.target.value)}} type="date" placeholder="Select a date:" autoComplete="off"></input>
             </label>
 
-            <button onClick={() => {sendForm(name, label, page, content, date)}}>Submit</button>
+            <button id="submit" onClick={(e) => {sendForm(name, label, page, content, date)}}>Submit</button>
 
         </div>
     )

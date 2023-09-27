@@ -25,7 +25,7 @@ export async function POST( req: NextRequest ) {
         name = "@Electric108"
       }
 
-      const full_content = `# What feature/bug fix would you like?\n${content}\n\n# What page should this feature/bug fix be on?\n${page}\n\n# When should this get done by?\n${date}\n\n# Requested by:\n${name}`
+      const full_content = `> 🤖✌️ This was submitted using the [GitHub Issues employee tool](https://blackswan3d.com/tech/github-issues/)!\n\n# What feature/bug fix would you like?\n${content}\n\n# What page should this feature/bug fix be on?\n${page}\n\n# When should this get done by?\n${date}\n\n# Requested by:\n${name}`
 
       const res = await installationOctokit.rest.issues.create({
         owner: 'blackswan3dprinting',
@@ -36,5 +36,5 @@ export async function POST( req: NextRequest ) {
         assignees: ['calejvaldez']
       });
 
-      return NextResponse.json(res.data)
+      return res.data.html_url
 }
