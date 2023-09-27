@@ -30,7 +30,7 @@ export async function POST( req: NextRequest ) {
       const res = await installationOctokit.rest.issues.create({
         owner: 'blackswan3dprinting',
         repo: 'blackswan3d.com',
-        title: content.substring(0, 20),
+        title: (content.length > 35) ? `${content.substring(0, 35)}...`:content,
         body: full_content,
         labels: [label],
         assignees: ['calejvaldez']
