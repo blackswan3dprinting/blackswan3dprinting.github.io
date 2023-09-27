@@ -1,31 +1,18 @@
-import Head from "next/head";
+import { Metadata } from "next"
 import styles from "../../../styles/tech_chalubot.module.scss"
+
+export const metadata: Metadata = {
+    title: "ChaluBot — Black Swan 3D Printing",
+    description: "ChaluBot is Black Swan's assistant in the digital word. On GitHub, Discord, and anywhere ChaluBot can access.",
+    twitter: { card: "summary_large_image", site: "https://blackswan3d.com/tech/chalubot/", images: "https://blackswan3d.com/images/header.png" },
+    openGraph: {type: 'website', url: 'https://blackswan3d.com/tech/chalubot/', images: "https://blackswan3d.com/images/header.png"},
+    viewport: "width=device-width, initial-scale=1",
+    icons: [{ rel: "icon", url: "/images/favicon.ico", sizes: "any" }, { rel: "icon", url: "/images/favicon.svg", type: "images/svg+xml" }]
+}
 
 export default function ChaluBot() {
     return (
         <div>
-            <Head>
-                <title>ChaluBot — Black Swan 3D Printing</title>
-                <meta name="title" content="ChaluBot — Black Swan 3D Printing" />
-                <meta name="description" content="ChaluBot is Black Swan's assistant in the digital word. On GitHub, Discord, and anywhere ChaluBot can access." />
-
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://blackswan3d.com/tech/chalubot/" />
-                <meta property="og:title" content="ChaluBot — Black Swan 3D Printing" />
-                <meta property="og:description" content="ChaluBot is Black Swan's assistant in the digital word. On GitHub, Discord, and anywhere ChaluBot can access." />
-                <meta property="og:image" content="/images/chalubot_header.png" />
-
-                <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://blackswan3d.com/tech/chalubot/" />
-                <meta property="twitter:title" content="ChaluBot — Black Swan 3D Printing" />
-                <meta property="twitter:description" content="ChaluBot is Black Swan's assistant in the digital word. On GitHub, Discord, and anywhere ChaluBot can access." />
-                <meta property="twitter:image" content="/images/chalubot_header.png" />
-
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <link rel="icon" href="/images/favicon.ico" sizes="any"/>
-                <link rel="icon" href="/images/favicon.svg" type="image/svg+xml"/>
-            </Head>
-
             <div id={styles.introducing}>
                 <h1 className={styles.introducing_text}>Introducing</h1>
                 <img id={styles.chalubot} src="/images/chalubot.svg" alt="Photo of ChaluBot" />
