@@ -128,11 +128,9 @@ export function IssueForm() {
             <label className={styles.input_label}>
                 What feature/bug fix would you like?
                 <textarea value={content} onChange={(e) => {setContent(e.target.value), checkContinue(e.target.value.length)}} wrap="hard" id={styles.desc} placeholder="Let us feed birb on the website!" autoComplete="off"/>
+                <button id="button-to-continue" hidden onClick={() => {next("issue-description", "description-label", `Change: ${content}`, "deadline")}}>Continue</button>
             </label>
-
             
-
-            <button id="button-to-continue" hidden onClick={() => {next("issue-description", "description-label", `Change: ${content}`, "deadline")}}>Continue</button>
             </div>
 
             
