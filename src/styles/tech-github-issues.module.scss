@@ -37,6 +37,11 @@
     
     border-radius: 5px;
 
+    input, select {
+        color: black;
+        background-color: white;
+    }
+
     button {
         background-color: constants.$YELLOW;
         font-weight: bold;
