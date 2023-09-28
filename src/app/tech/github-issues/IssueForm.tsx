@@ -16,7 +16,8 @@ function sendForm(name: string, label: string, page: string, content: string, da
             "name": name,
             "label": label,
             "page": page,
-            "content": content,
+            // we add the ⚠️ to indicate to developers that deliverables have not been set
+            "content": `⚠️ ${content}`,
             "date": date
         })
     }).then(async (res) => {
