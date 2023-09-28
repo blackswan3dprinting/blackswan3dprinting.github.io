@@ -5,6 +5,7 @@ import { createAppAuth } from "@octokit/auth-app"
 
 export async function POST( req: NextRequest ) {
     const pk = fs.readFileSync("chalubot.pem");
+    let full_content = fs.readFileSync("./issue_template.md").toString();
 
     const installationOctokit = new Octokit({
         authStrategy: createAppAuth,
@@ -25,7 +26,10 @@ export async function POST( req: NextRequest ) {
         name = "@Electric108"
       }
 
-      const full_content = `> 🤖✌️ This was submitted using the [GitHub Issues employee tool](https://blackswan3d.com/tech/github-issues/)!\n\n# What feature/bug fix would you like?\n${content}\n\n# What page should this feature/bug fix be on?\n${page}\n\n# When should this get done by?\n${date}\n\n# Requested by:\n${name}`
+      full_content = full_content.replace("INSERT_CONTENT", content)
+      full_content = full_content.replace("INSERT_PAGE", page)
+      full_content = full_content.replace("INSERT_DATE", date)
+      full_content = full_content.replace("INSERT_NAME", name)
 
       const res = await installationOctokit.rest.issues.create({
         owner: 'blackswan3dprinting',
