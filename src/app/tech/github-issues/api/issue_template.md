@@ -16,8 +16,8 @@ INSERT_DATE
 
 INSERT_NAME
 
-# Deliverables (⚠️ DELIVERABLES NOT SET)
+# Deliverables
 
 > This is for the developer team. Maybe an issue is too big and needs to be split into deliverables.
 
-- [ ] INSERT DELIVERABLE DESCRIPTION HERE!
+- [ ] ⚠️ INSERT DELIVERABLE DESCRIPTION HERE!
