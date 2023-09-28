@@ -32,9 +32,9 @@ export async function POST( req: NextRequest ) {
       }
 
       full_content = full_content.replace("INSERT_CONTENT", content)
-      full_content = full_content.replace("INSERT_PAGE", page)
-      full_content = full_content.replace("INSERT_DATE", date)
-      full_content = full_content.replace("INSERT_NAME", name)
+      .replace("INSERT_PAGE", page)
+      .replace("INSERT_DATE", date)
+      .replace("INSERT_NAME", name)
 
       // creates the issue
       const issue = await installationOctokit.rest.issues.create({
