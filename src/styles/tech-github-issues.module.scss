@@ -72,9 +72,22 @@
         border: black 1px solid;
         border-radius: 5px;
 
-        max-width: 350px;
+        width: 300px;
 
         padding: 0 5px;
+
+        .input_label {
+            text-align: center;
+        }
+    }
+
+    textarea {
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        width: 250px;
+        border: 1px solid constants.$BLACK;
+        margin: 5px 0;
     }
 }
 
