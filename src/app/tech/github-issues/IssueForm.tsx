@@ -46,6 +46,10 @@ export function IssueForm() {
         return `${weekdays[old_date.getDay()]} (${old_date.getMonth()}/${old_date.getDate()})`
     }
 
+    function showEnsure() {
+        document.getElementById("ensure-container").hidden = false;
+    }
+
     function next(id_to_hide: string, id_label_to_change: string, label_content: string, id_to_unhide: string) {
         document.getElementById(id_to_hide).hidden = true;
         document.getElementById(id_label_to_change).textContent = label_content;
@@ -61,8 +65,8 @@ export function IssueForm() {
         <div id={styles.submission_container}>
             <img id={styles.chalubot} src="/images/chalubot.svg" alt="Image of ChaluBot" height="150" width="150"/>
 
-            <div className={styles.make_sure} >
-                <p className={styles.input_label} >Please make sure the following is accurate:</p>
+            <div hidden id="ensure-container" className={styles.make_sure} >
+                <p className={styles.input_label} ><u>Please make sure this is accurate!</u></p>
                 <p id="label-name" ></p>
                 <p id="label-label" ></p>
                 <p id="label-page" ></p>
@@ -73,7 +77,7 @@ export function IssueForm() {
             <div id="input-name">
             <label className={styles.input_label} >
                 Please select your name.
-                <select id="select-name" value={name} onChange={(e) => {setName(e.target.value), next("input-name", "label-name", `Name: ${e.target.value}`, "input-bug-or-enhancement")}}>
+                <select id="select-name" value={name} onChange={(e) => {setName(e.target.value), next("input-name", "label-name", `Name: ${e.target.value}`, "input-bug-or-enhancement"), showEnsure()}}>
                     <option hidden>Select an option:</option>
                     <option>Joseph S.</option>
                     <option>Isaiah S.</option>
