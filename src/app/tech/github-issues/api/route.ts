@@ -12,6 +12,11 @@ export async function POST( req: NextRequest ) {
       repo: 'blackswan3d.com'
     }
 
+    const HAS_GITHUB = {
+      "Carlos V.": "@calejvaldez",
+      "Joseph S.": "@Electric108"
+    }
+
     const installationOctokit = new Octokit({
         authStrategy: createAppAuth,
         auth: {
@@ -23,13 +28,7 @@ export async function POST( req: NextRequest ) {
 
       const d = await req.json()
 
-      let [name, label, page, content, date]: string[] = [d['name'], d['label'], d['page'], d['content'], d['date']]
-
-      if (name === 'Carlos V.') {
-        name = "@calejvaldez"
-      } else if (name === 'Joseph S.') {
-        name = "@Electric108"
-      }
+      let [name, label, page, content, date]: string[] = [Object.keys(HAS_GITHUB).includes(d['name']) ? HAS_GITHUB[d['name']]: d['name'], d['label'], d['page'], d['content'], d['date']]
 
       full_content = full_content.replace("INSERT_CONTENT", content)
       .replace("INSERT_PAGE", page)
