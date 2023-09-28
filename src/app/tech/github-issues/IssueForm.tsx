@@ -9,9 +9,6 @@ function sendForm(name: string, label: string, page: string, content: string, da
     b.textContent = "LOADING..."
     b.disabled = true;
 
-    let d = new Date(date.replace(/-/g, '\/'));
-    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
     fetch('/tech/github-issues/api/',
     {
         method: 'POST',
@@ -20,7 +17,7 @@ function sendForm(name: string, label: string, page: string, content: string, da
             "label": label,
             "page": page,
             "content": content,
-            "date": `${weekdays[d.getDay()]} (${d.getMonth()}/${d.getDate()})`
+            "date": date
         })
     }).then(async (res) => {
         const a = await res.json();
@@ -41,31 +38,74 @@ export function IssueForm() {
     const [content, setContent] = useState("");
     const [date, setDate] = useState("Select a date:");
 
+    function parseDate(d: string): string {
+        let old_date = new Date(d.replace(/-/g, '\/'));
+        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+        return `${weekdays[old_date.getDay()]} (${old_date.getMonth()}/${old_date.getDate()})`
+    }
+
+    function next(id_to_hide: string, id_label_to_change: string, label_content: string, id_to_unhide: string) {
+        document.getElementById(id_to_hide).hidden = true;
+        document.getElementById(id_label_to_change).textContent = label_content;
+        document.getElementById(id_to_unhide).hidden = false;
+    }
+
+    function checkContinue(size: number) {
+        document.getElementById("button-to-continue").hidden = size === 0;
+    }
+
+
     return (
         <div id={styles.submission_container}>
             <img id={styles.chalubot} src="/images/chalubot.svg" alt="Image of ChaluBot" height="150" width="150"/>
+
+            <div className={styles.make_sure} >
+                <p className={styles.input_label} >Please make sure the following is accurate:</p>
+                <p id="label-name" ></p>
+                <p id="label-label" ></p>
+                <p id="label-page" ></p>
+                <p id="description-label"></p>
+                <p id="label-deadline" ></p>
+            </div>
+
+            <div id="input-name">
             <label className={styles.input_label} >
                 Please select your name.
-                <select value={name} onChange={(e) => {setName(e.target.value)}}>
+                <select id="select-name" value={name} onChange={(e) => {setName(e.target.value), next("input-name", "label-name", `Name: ${e.target.value}`, "input-bug-or-enhancement")}}>
                     <option hidden>Select an option:</option>
                     <option>Joseph S.</option>
                     <option>Isaiah S.</option>
                     <option>Carlos V.</option>
                 </select>
             </label>
+            </div>
 
-            <label className={styles.input_label}>
-                What are you submitting?
-                <select value={label} onChange={(e) => {setLabel(e.target.value)}} >
-                    <option hidden>Select an option:</option>
-                    <option value="enhancement">👀 I'd like to suggest a feature</option>
-                    <option value="bug">🪲 I found a bug I'd like to report</option>
-                </select>
-            </label>
+            <fieldset id="input-bug-or-enhancement" hidden>
+                <label className={styles.input_label} >What are you submitting?</label>
 
+                <div>
+                <label>
+                    <input onChange={(e) => {setLabel(e.target.value), next("input-bug-or-enhancement", "label-label", `Label: ${e.target.value}`, "input-page")}} name="label" type="radio" value="enhancement"></input>
+                    👀 I'd like to suggest a feature
+                </label>
+                </div>
+
+                <div>
+                <label>
+                    <input onChange={(e) => {setLabel(e.target.value), next("input-bug-or-enhancement", "label-label", `Label: ${e.target.value}`, "input-page")}} name="label" type="radio" value="bug"></input>
+                    🪲 I found a bug I'd like to report
+                </label>
+                </div>
+                
+
+            </fieldset>
+
+
+            <div id="input-page" hidden>
             <label className={styles.input_label} >
                 What page is this request for?
-                <select value={page} onChange={(e) => {setPage(e.target.value)}} >
+                <select id="select-page" value={page} onChange={(e) => {setPage(e.target.value), next("input-page", "label-page", `Page: ${e.target.value}`, "issue-description")}} >
                     <option hidden>Select an option:</option>
                     <option value="https://blackswan3d.com/about/">"About Us" page</option>
                     <option value="https://blackswan3d.com/our-work/">"Our work" page</option>
@@ -75,18 +115,31 @@ export function IssueForm() {
                     <option value="N/A">N/A</option>
                 </select>
             </label>
+            </div>
 
+            
+
+            <div id="issue-description" hidden>
             <label className={styles.input_label}>
                 What feature/bug fix would you like?
-                <textarea value={content} onChange={(e) => {setContent(e.target.value)}} wrap="hard" id={styles.desc} placeholder="Let us feed birb on the website!" autoComplete="off"/>
+                <textarea value={content} onChange={(e) => {setContent(e.target.value), checkContinue(e.target.value.length)}} wrap="hard" id={styles.desc} placeholder="Let us feed birb on the website!" autoComplete="off"/>
             </label>
 
+            
+
+            <button id="button-to-continue" hidden onClick={() => {next("issue-description", "description-label", `Change: ${content}`, "deadline")}}>Continue</button>
+            </div>
+
+            
+
+            <div id="deadline" hidden>
             <label className={styles.input_label} >
                 When should we get this done by?
-                <input value={date} onChange={(e) => {setDate(e.target.value)}} type="date" placeholder="Select a date:" autoComplete="off"></input>
+                <input value={date} onChange={(e) => {setDate(parseDate(e.target.value)), next("deadline", "label-deadline", `Deadline: ${parseDate(e.target.value)}`, "submit")}} type="date" placeholder="Select a date:" autoComplete="off"></input>
             </label>
+            </div>
 
-            <button id="submit" onClick={(e) => {sendForm(name, label, page, content, date)}}>Submit</button>
+            <button hidden id="submit" onClick={(e) => {sendForm(name, label, page, content, date)}}>Submit</button>
 
         </div>
     )
