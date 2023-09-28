@@ -24,47 +24,47 @@ export async function POST( req: NextRequest ) {
           privateKey: pk.toString(),
           installationId: 41760647,
         },
-      });
+    });
 
-      const d = await req.json()
+    const d = await req.json()
 
-      let [name, label, page, content, date]: string[] = [Object.keys(HAS_GITHUB).includes(d['name']) ? HAS_GITHUB[d['name']]: d['name'], d['label'], d['page'], d['content'], d['date']]
+    let [name, label, page, content, date]: string[] = [Object.keys(HAS_GITHUB).includes(d['name']) ? HAS_GITHUB[d['name']]: d['name'], d['label'], d['page'], d['content'], d['date']]
 
-      full_content = full_content.replace("INSERT_CONTENT", content)
-      .replace("INSERT_PAGE", page)
-      .replace("INSERT_DATE", date)
-      .replace("INSERT_NAME", name)
+    full_content = full_content.replace("INSERT_CONTENT", content)
+    .replace("INSERT_PAGE", page)
+    .replace("INSERT_DATE", date)
+    .replace("INSERT_NAME", name)
 
-      // creates the issue
-      const issue = await installationOctokit.rest.issues.create({
-        ...OWNER_REPO,
-        title: (content.length > 50) ? `${content.substring(0, 50)}...`:content,
-        body: full_content,
-        labels: [label],
-        assignees: ['calejvaldez']
-      });
+    // creates the issue
+    const issue = await installationOctokit.rest.issues.create({
+      ...OWNER_REPO,
+      title: (content.length > 50) ? `${content.substring(0, 50)}...`:content,
+      body: full_content,
+      labels: [label],
+      assignees: ['calejvaldez']
+    });
 
-      const ISSUE_NUMBER = issue.data.number;
+    const ISSUE_NUMBER = issue.data.number;
 
-      // gets `dev` branch to get latest commit
-      const branch = await installationOctokit.rest.repos.getBranch({
-        ...OWNER_REPO,
-        branch: 'dev'
-      })
+    // gets `dev` branch to get latest commit
+    const branch = await installationOctokit.rest.repos.getBranch({
+      ...OWNER_REPO,
+      branch: 'dev'
+    })
 
-      // issue.data.id gets the issue number
-      // branch.data.commit.sha gets the reference to branch off of
-      await installationOctokit.rest.git.createRef({
-        ...OWNER_REPO,
-        ref: `refs/heads/dev-${ISSUE_NUMBER}`,
-        sha: branch.data.commit.sha
-      })
+    // issue.data.id gets the issue number
+    // branch.data.commit.sha gets the reference to branch off of
+    await installationOctokit.rest.git.createRef({
+      ...OWNER_REPO,
+      ref: `refs/heads/dev-${ISSUE_NUMBER}`,
+      sha: branch.data.commit.sha
+    })
 
-      await installationOctokit.rest.issues.createComment({
-        ...OWNER_REPO,
-        issue_number: ISSUE_NUMBER,
-        body: "New branch `dev-" + ISSUE_NUMBER + "` successfully created."
-      })
+    await installationOctokit.rest.issues.createComment({
+      ...OWNER_REPO,
+      issue_number: ISSUE_NUMBER,
+      body: "New branch `dev-" + ISSUE_NUMBER + "` successfully created."
+    })
 
-      return issue.data.html_url
+    return issue.data.html_url
 }
