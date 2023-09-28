@@ -7,6 +7,11 @@ export async function POST( req: NextRequest ) {
     const pk = fs.readFileSync("chalubot.pem");
     let full_content = fs.readFileSync("./issue_template.md").toString();
 
+    const OWNER_REPO = {
+      owner: 'blackswan3dprinting',
+      repo: 'blackswan3d.com'
+    }
+
     const installationOctokit = new Octokit({
         authStrategy: createAppAuth,
         auth: {
@@ -31,14 +36,34 @@ export async function POST( req: NextRequest ) {
       full_content = full_content.replace("INSERT_DATE", date)
       full_content = full_content.replace("INSERT_NAME", name)
 
-      const res = await installationOctokit.rest.issues.create({
-        owner: 'blackswan3dprinting',
-        repo: 'blackswan3d.com',
+      // creates the issue
+      const issue = await installationOctokit.rest.issues.create({
+        ...OWNER_REPO,
         title: (content.length > 50) ? `${content.substring(0, 50)}...`:content,
         body: full_content,
         labels: [label],
         assignees: ['calejvaldez']
       });
 
-      return res.data.html_url
+      // gets `dev` branch to get latest commit
+      const branch = await installationOctokit.rest.repos.getBranch({
+        ...OWNER_REPO,
+        branch: 'dev'
+      })
+
+      // issue.data.id gets the issue number
+      // branch.data.commit.sha gets the reference to branch off of
+      await installationOctokit.rest.git.createRef({
+        ...OWNER_REPO,
+        ref: `refs/heads/dev-${issue.data.id}`,
+        sha: branch.data.commit.sha
+      })
+
+      await installationOctokit.rest.issues.createComment({
+        ...OWNER_REPO,
+        issue_number: issue.data.id,
+        body: "New branch `dev-" + issue.data.id + "` successfully created."
+      })
+
+      return issue.data.html_url
 }
