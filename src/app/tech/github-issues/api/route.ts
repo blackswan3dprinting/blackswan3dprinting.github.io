@@ -5,7 +5,7 @@ import { createAppAuth } from "@octokit/auth-app"
 
 export async function POST( req: NextRequest ) {
     const pk = fs.readFileSync("chalubot.pem");
-    let full_content = fs.readFileSync("./issue_template.md").toString();
+    let full_content = fs.readFileSync("./app/tech/github-issues/api/issue_template.md").toString();
 
     const OWNER_REPO = {
       owner: 'blackswan3dprinting',
@@ -44,6 +44,8 @@ export async function POST( req: NextRequest ) {
         assignees: ['calejvaldez']
       });
 
+      const ISSUE_NUMBER = issue.data.number;
+
       // gets `dev` branch to get latest commit
       const branch = await installationOctokit.rest.repos.getBranch({
         ...OWNER_REPO,
@@ -54,14 +56,14 @@ export async function POST( req: NextRequest ) {
       // branch.data.commit.sha gets the reference to branch off of
       await installationOctokit.rest.git.createRef({
         ...OWNER_REPO,
-        ref: `refs/heads/dev-${issue.data.id}`,
+        ref: `refs/heads/dev-${ISSUE_NUMBER}`,
         sha: branch.data.commit.sha
       })
 
       await installationOctokit.rest.issues.createComment({
         ...OWNER_REPO,
-        issue_number: issue.data.id,
-        body: "New branch `dev-" + issue.data.id + "` successfully created."
+        issue_number: ISSUE_NUMBER,
+        body: "New branch `dev-" + ISSUE_NUMBER + "` successfully created."
       })
 
       return issue.data.html_url
