@@ -32,8 +32,9 @@
 
     min-width: 300px;
     width: 100%;
-    max-width: 650px;
-    border: solid 2px constants.$BLACK;
+    
+    border:black solid px;
+    
     border-radius: 5px;
 
     button {
@@ -55,6 +56,20 @@
         &:disabled {
             cursor: default;
         }
+    }
+
+    fieldset {
+        border: none;
+    }
+
+    .make_sure {
+        background-color: white;
+        border: black 1px solid;
+        border-radius: 5px;
+
+        max-width: 350px;
+
+        padding: 0 5px;
     }
 }
 
