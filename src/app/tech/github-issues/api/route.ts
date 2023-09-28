@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import { Octokit } from "octokit";
 import { createAppAuth } from "@octokit/auth-app"
 
-export async function POST( req: NextRequest ) {
+export async function POST( req: NextRequest ): Promise<NextResponse> {
     const pk = fs.readFileSync("chalubot.pem");
     let full_content = fs.readFileSync("./app/tech/github-issues/api/issue_template.md").toString();
 
@@ -44,6 +44,11 @@ export async function POST( req: NextRequest ) {
       assignees: ['calejvaldez']
     });
 
+    if (issue.status !== 201) {
+      // Issue failed to be created
+      return new NextResponse(JSON.stringify({"error": "issue"}));
+    }
+
     const ISSUE_NUMBER = issue.data.number;
 
     // gets `dev` branch to get latest commit
@@ -52,19 +57,34 @@ export async function POST( req: NextRequest ) {
       branch: 'dev'
     })
 
+    if (branch.status !== 200) {
+      // failed to get branch
+      return new NextResponse(JSON.stringify({"error": "get branch"}));
+    }
+
     // issue.data.id gets the issue number
     // branch.data.commit.sha gets the reference to branch off of
-    await installationOctokit.rest.git.createRef({
+    const new_branch = await installationOctokit.rest.git.createRef({
       ...OWNER_REPO,
       ref: `refs/heads/dev-${ISSUE_NUMBER}`,
       sha: branch.data.commit.sha
     })
 
-    await installationOctokit.rest.issues.createComment({
+    if (new_branch.status !== 201) {
+      // failed to make a new branch
+      return new NextResponse(JSON.stringify({"error": "new branch"}));
+    }
+
+    const comment = await installationOctokit.rest.issues.createComment({
       ...OWNER_REPO,
       issue_number: ISSUE_NUMBER,
       body: "New branch `dev-" + ISSUE_NUMBER + "` successfully created."
     })
 
-    return issue.data.html_url
+    if (comment.status !== 201) {
+      // failed to create comment
+      return new NextResponse(JSON.stringify({"error": "comment"}));
+    }
+
+    return new NextResponse(JSON.stringify({"url": issue.data.html_url}))
 }

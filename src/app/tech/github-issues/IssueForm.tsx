@@ -22,8 +22,15 @@ function sendForm(name: string, label: string, page: string, content: string, da
             "content": content,
             "date": `${weekdays[d.getDay()]} (${d.getMonth()}/${d.getDate()})`
         })
-    }).then((d) => {
-        window.location.reload();
+    }).then(async (res) => {
+        const a = await res.json();
+
+        if (Object.keys(a).includes("error")) {
+            alert("Sorry, an error occured. Please contact Carlos.");
+            window.location.reload();
+        } else {
+            window.location.href = a['url']
+        }
     })
 }
 
