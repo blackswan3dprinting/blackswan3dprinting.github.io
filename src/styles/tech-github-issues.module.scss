@@ -38,16 +38,6 @@
     
     border-radius: 5px;
 
-    input, select {
-        color: black;
-        background-color: white;
-    }
-
-    input[type="date"] {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-    }
-
     button {
         background-color: constants.$YELLOW;
         color: black;
