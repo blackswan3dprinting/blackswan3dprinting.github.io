@@ -78,7 +78,7 @@ export async function POST( req: NextRequest ): Promise<NextResponse> {
     const comment = await installationOctokit.rest.issues.createComment({
       ...OWNER_REPO,
       issue_number: ISSUE_NUMBER,
-      body: "New branch `dev-" + ISSUE_NUMBER + "` successfully created."
+      body: "New branch `dev-" + ISSUE_NUMBER + "` successfully created from `dev` commit " + branch.data.commit.sha + "."
     })
 
     if (comment.status !== 201) {
