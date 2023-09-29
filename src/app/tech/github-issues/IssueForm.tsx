@@ -26,7 +26,7 @@ function sendForm(name: string, label: string, page: string, content: string, da
             alert("Sorry, an error occured. Please contact Carlos.");
             window.location.reload();
         } else {
-            window.location.href = a['url']
+            open(a['url'], "_blank", "noopener=1,noreferrer=1")
         }
     })
 }
