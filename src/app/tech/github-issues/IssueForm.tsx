@@ -137,7 +137,7 @@ export function IssueForm() {
             <div id="deadline" hidden>
             <label className={styles.input_label} >
                 When should we get this done by?
-                <input value={date} onChange={(e) => {setDate(parseDate(e.target.value)), next("deadline", "label-deadline", `Deadline: ${parseDate(e.target.value)}`, "submit")}} type="date" placeholder="Select a date:" autoComplete="off"></input>
+                <input value={date} onInput={(e) => {setDate(parseDate(e.currentTarget.value)), next("deadline", "label-deadline", `Deadline: ${parseDate(e.currentTarget.value)}`, "submit")}} type="date" placeholder="Select a date:" autoComplete="off"></input>
             </label>
             </div>
 
