@@ -38,7 +38,8 @@ export async function POST( req: NextRequest ): Promise<NextResponse> {
     // creates the issue
     const issue = await installationOctokit.rest.issues.create({
       ...OWNER_REPO,
-      title: (content.length > 50) ? `${content.substring(0, 50)}...`:content,
+      // we add the ⚠️ to indicate to developers that deliverables have not been set
+      title: (content.length > 50) ? `⚠️ ${content.substring(0, 50)}...`:`⚠️ ${content}`,
       body: full_content,
       labels: [label],
       assignees: ['calejvaldez']
