@@ -1,0 +1,30 @@
+name: Feature Request
+description: 👀 I'd like to request a feature!
+title: ⚠️ Insert a short title for your feature request!
+labels: ["enhancement"]
+assignees:
+  - calejvaldez
+body:
+  - type: dropdown
+    id: page
+    attributes:
+      label: Page
+      description: What page is this feature for?
+      multiple: false
+      options:
+        - About
+        - Our Work
+        - Our Team
+        - I'm requesting a new page
+        - N/A
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Please explain in great detail the feature you'd like implemented.
+      placeholder: "ex. Let us feed birb on the website!"
+    validations:
+      required: true
