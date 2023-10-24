@@ -1,0 +1,114 @@
+@use "./constants.scss";
+
+@mixin commonh1() {
+    h1 {
+        font-size: 40px;
+        font-weight: 600;
+    }
+}
+
+.body {
+    color: white;
+    padding: 0 75px;
+
+    @media only screen and (max-width: 480px) {
+        padding: 50px;
+    }
+}
+
+.headline {
+    margin: 50px 0;
+
+    h1 {
+        font-size: 100px;
+        font-weight: 800;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 50px;
+        }
+    }
+
+    p, a {
+        font-family: futura;
+        font-weight: 500;
+        color: white;
+
+        margin: 20px 0;
+    }
+
+    p {
+        width: 350px;
+
+        @media only screen and (max-width: 480px) {
+            width: 300px;
+        }
+    }
+}
+
+#what_we_do {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin: 50px 0;
+
+
+    #what_we_do_text {
+        color: white;
+        h1 {
+            @include commonh1();
+        }
+
+        p {
+            font-family: futura;
+            font-weight: 500;
+
+            margin: 20px 0;
+
+            max-width: 500px;
+        }
+    }
+}
+
+#services {
+    color: white;
+    h1 {@include commonh1();}
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 50px 0;
+
+    p {
+        font-family: futura;
+        font-weight: 500;
+
+        margin: 20px 0;
+
+        max-width: 500px;
+    }
+
+    #services_boxes {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}
+
+#more_info {
+    margin: 20px 0;
+
+    margin: 50px 0;
+
+    p {
+        font-family: futura;
+        margin: 50px 0;
+    }
+}

@@ -2,7 +2,7 @@
 
 .header {
     background-color: constants.$BLACK;
-    padding: 15px;
+    padding: 30px 65px;
 
     display: flex;
     flex-direction: row;
@@ -15,10 +15,16 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    flex-wrap: wrap;
 }
 
 .header_button {
-    padding: 10px 15px;
+    padding: 0 35px;
+    font-family: futura Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+    margin: 5px 0;
 
     @include constants.CLICKABLE_TEXT(constants.$WHITE, constants.$YELLOW);
 }
