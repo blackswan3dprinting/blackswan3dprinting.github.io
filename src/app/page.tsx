@@ -41,7 +41,7 @@ export default function Index() {
             <div id={styles.more_info}>
                 <h1 className={raleway.className}>NEED MORE INFO?</h1>
                 <p className={futura.className} >Have a project with specific requirements? Just follow the link and we will get back to you.</p>
-                <Button label="CONTACT US  ➤" url="https://instagram.com/blackswan3dprinting" />
+                <Button label="EMAIL US  ➤" url="mailto:contact@blackswan3d.com" />
             </div>
         </div>
     )
