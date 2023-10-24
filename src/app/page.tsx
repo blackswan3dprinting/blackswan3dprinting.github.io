@@ -1,4 +1,5 @@
 import styles from '../styles/index.module.scss';
+import { EtsyListing } from './etsy_listing';
 import { Raleway } from 'next/font/google';
 
 const raleway = Raleway({
@@ -22,8 +23,15 @@ export default function Index() {
                 <img src="/images/deadpool.jpg" height="250" alt="3D print of the Marvel character Deadpool"></img>
             </div>
 
-            <div></div>
-            
+            <div id={styles.services}>
+                <h1 className={raleway.className}>SERVICES</h1>
+                <div id={styles.services_boxes}>
+
+                    <EtsyListing name="DESIGN YOUR IDEA" desc="Need a part for a project or want to turn something into a 3D model? No problem! We can develop digital models for you using CAD software." url="https://www.etsy.com/listing/1561453537/"/>
+                    <EtsyListing name="PRINT YOUR STL FILES" desc="Want your files to become a reality? Our line of industrial level 3D printers will ensure your concepts become creation with the best materials and care possible." url="https://www.etsy.com/listing/1547874520/" />
+                </div>
+            </div>
+
             <div></div>
         </div>
     )
