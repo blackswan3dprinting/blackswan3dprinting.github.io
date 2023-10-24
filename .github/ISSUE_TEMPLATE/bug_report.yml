@@ -1,0 +1,60 @@
+name: Bug Report
+description: 🪲 I found a bug I'd like to report!
+title: ⚠️ Insert a short title for your bug report.
+labels: ["bug"]
+assignees:
+  - calejvaldez
+body:
+  - type: dropdown
+    id: page
+    attributes:
+      label: Page
+      description: What page is this report for?
+      options:
+        - About
+        - Our Work
+        - Our Team
+        - I'm requesting a new page
+        - N/A
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - iOS
+        - Android
+        - Windows
+        - macOS
+        - ChromeOS
+        - Linux
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: What browser are you using?
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Microsoft Edge
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: bug_report
+    attributes:
+      label: Bug Description
+      description: Please describe the bug to the best of your ability.
+      placeholder: ex. I get an error when I click Our Services!
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: ex. I should be taken to the Our Services page.
