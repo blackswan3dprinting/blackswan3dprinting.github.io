@@ -1,5 +1,12 @@
 @use "./constants.scss";
 
+@mixin commonh1() {
+    h1 {
+        font-size: 40px;
+        font-weight: 600;
+    }
+}
+
 .body {
     color: white;
     padding: 0 75px;
@@ -49,8 +56,7 @@
     #what_we_do_text {
         color: white;
         h1 {
-            font-size: 40px;
-            font-weight: 600;
+            @include commonh1();
         }
 
         p {
@@ -61,5 +67,33 @@
 
             max-width: 500px;
         }
+    }
+}
+
+#services {
+    color: white;
+    h1 {@include commonh1();}
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-family: futura;
+        font-weight: 500;
+
+        margin: 20px 0;
+
+        max-width: 500px;
+    }
+
+    #services_boxes {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
 }
