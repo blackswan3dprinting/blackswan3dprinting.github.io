@@ -5,6 +5,14 @@ labels: ["enhancement"]
 assignees:
   - calejvaldez
 body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Please explain in great detail the feature you'd like implemented.
+      placeholder: "ex. Let us feed birb on the website!"
+    validations:
+      required: true
   - type: dropdown
     id: page
     attributes:
@@ -20,11 +28,4 @@ body:
         - Other
     validations:
       required: true
-  - type: textarea
-    id: summary
-    attributes:
-      label: Summary
-      description: Please explain in great detail the feature you'd like implemented.
-      placeholder: "ex. Let us feed birb on the website!"
-    validations:
-      required: true
+

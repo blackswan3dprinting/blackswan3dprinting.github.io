@@ -5,6 +5,22 @@ labels: ["bug"]
 assignees:
   - calejvaldez
 body:
+  - type: textarea
+    id: bug_report
+    attributes:
+      label: Bug Description
+      description: Please describe the bug to the best of your ability.
+      placeholder: ex. I get an error when I click Our Services!
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: ex. I should be taken to the Our Services page.
+    validations:
+      required: true
   - type: dropdown
     id: page
     attributes:
@@ -44,21 +60,5 @@ body:
         - Safari
         - Microsoft Edge
         - Other
-    validations:
-      required: true
-  - type: textarea
-    id: bug_report
-    attributes:
-      label: Bug Description
-      description: Please describe the bug to the best of your ability.
-      placeholder: ex. I get an error when I click Our Services!
-    validations:
-      required: true
-  - type: textarea
-    id: expected_behavior
-    attributes:
-      label: Expected Behavior
-      description: What should happen instead?
-      placeholder: ex. I should be taken to the Our Services page.
     validations:
       required: true
