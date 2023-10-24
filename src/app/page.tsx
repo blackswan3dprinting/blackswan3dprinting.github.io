@@ -1,4 +1,5 @@
 import styles from '../styles/index.module.scss';
+import { Button } from './button';
 import { EtsyListing } from './etsy_listing';
 import { Raleway } from 'next/font/google';
 
@@ -32,7 +33,11 @@ export default function Index() {
                 </div>
             </div>
 
-            <div></div>
+            <div id={styles.more_info}>
+                <h1 className={raleway.className}>NEED MORE INFO?</h1>
+                <p>Have a project with specific requirements? Just follow the link and we will get back to you.</p>
+                <Button label="CONTACT US  ➤" url="https://instagram.com/blackswan3dprinting" />
+            </div>
         </div>
     )
 }

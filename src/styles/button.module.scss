@@ -1,0 +1,8 @@
+@use "./constants.scss";
+
+.button {
+    @include constants.CLICKABLE_TEXT(constants.$BLACK, constants.$BLACK);
+    color: black;
+    padding: 15px 20px;
+    background-color: white;
+}

@@ -1,4 +1,5 @@
 import styles from "../styles/etsy_listing.module.scss"
+import { Button } from "./button"
 
 export function EtsyListing(props: {name: string, desc: string, url: string}) {
     return (
@@ -6,9 +7,7 @@ export function EtsyListing(props: {name: string, desc: string, url: string}) {
             <h1>{props.name}</h1>
             <p>{props.desc}</p>
 
-            <a href={props.url} className={styles.etsy_button} target="_blank" rel="noopener noreferrer">
-                ORDER ON ETSY  ➤
-            </a>
+            <Button label="ORDER ON ETSY  ➤" url={props.url} />
         </div>
     )
 }
