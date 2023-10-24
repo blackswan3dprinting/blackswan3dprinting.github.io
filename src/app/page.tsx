@@ -2,7 +2,17 @@ import styles from '../styles/index.module.scss';
 import { Button } from './button';
 import { EtsyListing } from './etsy_listing';
 import { Raleway } from 'next/font/google';
-import localFont from 'next/font/local'
+import localFont from 'next/font/local';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Black Swan 3D Printing - Rare quality and design",
+    description: "Get rare quality products from a business you can trust: Black Swan 3D Printing. We're located in Irvine, California.",
+    twitter: { title: "Black Swan 3D Printing - Rare quality and design", description: "Get rare quality products from a business you can trust: Black Swan 3D Printing. We're located in Irvine, California.", card: "summary_large_image", site: "https://blackswan3d.com/", images: "https://blackswan3d.com/images/header.png" },
+    openGraph: {title: "Black Swan 3D Printing - Rare quality and design", description: "Get rare quality products from a business you can trust: Black Swan 3D Printing. We're located in Irvine, California.", type: 'website', url: 'https://blackswan3d.com/', images: "https://blackswan3d.com/images/header.png"},
+    viewport: "width=device-width, initial-scale=1",
+    icons: [{ rel: "icon", url: "/images/favicon.ico", sizes: "any" }, { rel: "icon", url: "/images/favicon.svg", type: "images/svg+xml" }]
+}
 
 const futura = localFont({
     src: "../styles/futura/futur.ttf"
