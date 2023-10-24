@@ -36,10 +36,18 @@
   
 .footer_socials_logo {
     margin: 0 35px;
+
+    @media only screen and (max-width: 480px) {
+        margin: 0 20px;
+    }
 }
 
 #footer_contact {
     text-align: left;
+    
+    @media only screen and (max-width: 480px) {
+        text-align: center;
+    }
 }
 
 #footer_content_social_container {
@@ -50,4 +58,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: 480px) {
+        justify-content: center;
+        margin: 0 20px;
+    }
 }
