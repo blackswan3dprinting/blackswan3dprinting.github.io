@@ -25,27 +25,16 @@
     p, a {
         font-family: futura;
         font-weight: 500;
-        color: white;
 
         margin: 20px 0;
     }
 
     p {
         width: 350px;
+        color: white;
 
         @media only screen and (max-width: 480px) {
             width: 300px;
-        }
-    }
-
-    .etsy_button {
-        @include constants.CLICKABLE_TEXT(constants.$BLACK, constants.$BLACK);
-        color: black;
-        padding: 15px 20px;
-        background-color: white;
-    
-        &:hover {
-            box-shadow: constants.$BLUE 3px 3px 3px;
         }
     }
 }

@@ -52,6 +52,8 @@
     align-items: center;
     flex-wrap: wrap;
 
+    margin: 50px 0;
+
 
     #what_we_do_text {
         color: white;
@@ -79,6 +81,8 @@
     justify-content: center;
     align-items: center;
 
+    margin: 50px 0;
+
     p {
         font-family: futura;
         font-weight: 500;
@@ -95,5 +99,16 @@
         align-items: center;
         justify-content: space-around;
         flex-wrap: wrap;
+    }
+}
+
+#more_info {
+    margin: 20px 0;
+
+    margin: 50px 0;
+
+    p {
+        font-family: futura;
+        margin: 50px 0;
     }
 }
