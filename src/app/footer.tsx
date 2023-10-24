@@ -1,11 +1,23 @@
 import styles from "../styles/footer.module.scss"
+import { Raleway } from 'next/font/google'
 import Image from "next/image"
+import localFont from "next/font/local"
+
+const raleway = Raleway({
+    subsets: ['latin'],
+    weight: '600',
+    display: 'swap'
+})
+
+const futura = localFont({
+    src: "../styles/futura/futur.ttf"
+})
 
 function LinkToSocial( {photo_path, alt_text, value} ) {
     return (
         <div className={styles.footer_socials_logo}>
             <a className={styles.footer_socials_colors} href={value} target="_blank" rel="noopener noreferrer">
-                <Image src={photo_path} alt={alt_text} height="29" width="29"/>
+                <Image src={photo_path} alt={alt_text} height="35" width="35"/>
             </a>
         </div>
     )
@@ -24,8 +36,8 @@ function CreateSocials() {
 
 function CreateContactInfo() {
     return (
-        <div id={styles.footer_contact}>
-            <p><strong>Contact us!</strong></p>
+        <div id={styles.footer_contact} className={raleway.className}>
+            <p>Black Swan 3D Printing</p>
             <p>Irvine, CA 92617</p>
             <p><a href="tel:+19313025988">(931) 302-5988</a></p>
             <p><a href="mailto:contact@blackswan3d.com">contact@blackswan3d.com</a></p>
@@ -37,9 +49,16 @@ export function Footer() {
     // The footer from every page
     return (
         <footer id={styles.footer}>
-            <CreateSocials />
-            <br/>
-            <CreateContactInfo />
+            <hr></hr>
+            <div id={styles.footer_content_social_container}>
+                <CreateContactInfo />
+                <CreateSocials />
+            </div>
+            <div id={styles.footer_credit} >
+                <p className={futura.className}>Website designed by Austin Chun</p>
+                <p className={futura.className}>Programmed by Carlos Valdez</p>
+            </div>
+
         </footer>
     )
 }
