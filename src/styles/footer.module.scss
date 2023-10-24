@@ -14,6 +14,11 @@
     a {
         @include constants.CLICKABLE_TEXT(constants.$WHITE, constants.$YELLOW);
     }
+
+    hr {
+        color: white;
+        width: 90%;
+    }
 }
 
 .footer_socials_colors {
@@ -26,9 +31,23 @@
 
 #footer_socials {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
   
 .footer_socials_logo {
-    margin: 0 25px;
+    margin: 0 35px;
+}
+
+#footer_contact {
+    text-align: left;
+}
+
+#footer_content_social_container {
+    padding: 20px 0;
+
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
