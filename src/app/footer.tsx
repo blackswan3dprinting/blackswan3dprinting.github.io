@@ -1,11 +1,16 @@
 import styles from "../styles/footer.module.scss"
 import { Raleway } from 'next/font/google'
 import Image from "next/image"
+import localFont from "next/font/local"
 
 const raleway = Raleway({
     subsets: ['latin'],
     weight: '600',
     display: 'swap'
+})
+
+const futura = localFont({
+    src: "../styles/futura/futur.ttf"
 })
 
 function LinkToSocial( {photo_path, alt_text, value} ) {
@@ -48,6 +53,10 @@ export function Footer() {
             <div id={styles.footer_content_social_container}>
                 <CreateContactInfo />
                 <CreateSocials />
+            </div>
+            <div id={styles.footer_credit} >
+                <p className={futura.className}>Website designed by Austin Chun</p>
+                <p className={futura.className}>Programmed by Carlos Valdez</p>
             </div>
 
         </footer>
