@@ -6,12 +6,19 @@ import localFont from 'next/font/local';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://blackswan3d.com'),
     title: "Black Swan 3D Printing - Rare quality and design",
     description: "Get rare quality products from a business you can trust: Black Swan 3D Printing. We're located in Irvine, California.",
     twitter: { title: "Black Swan 3D Printing - Rare quality and design", description: "Get rare quality products from a business you can trust: Black Swan 3D Printing. We're located in Irvine, California.", card: "summary_large_image", site: "https://blackswan3d.com/", images: "https://blackswan3d.com/images/header.png" },
     openGraph: {title: "Black Swan 3D Printing - Rare quality and design", description: "Get rare quality products from a business you can trust: Black Swan 3D Printing. We're located in Irvine, California.", type: 'website', url: 'https://blackswan3d.com/', images: "https://blackswan3d.com/images/header.png"},
     viewport: "width=device-width, initial-scale=1",
-    icons: [{ rel: "icon", url: "/images/favicon.ico", sizes: "any" }, { rel: "icon", url: "/images/favicon.svg", type: "images/svg+xml" }]
+    icons: [{ rel: "icon", url: "/images/favicon.ico", sizes: "any" }, { rel: "icon", url: "/images/favicon.svg", type: "images/svg+xml" }],
+    alternates: {
+        canonical: '/',
+        languages: {
+          'en-US': '/en-US'
+        },
+      },
 }
 
 const futura = localFont({
