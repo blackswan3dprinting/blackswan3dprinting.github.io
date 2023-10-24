@@ -13,7 +13,7 @@ export default function Index() {
             <div className={`${styles.headline} ${raleway.className}`}>
                 <h1>YOUR PREMIER 3D PRINTING SERVICE.</h1>
                 <p>Get your ideas printed with the highest quality materials from a business you can trust.</p>
-                <a href="">View our Services ➤</a>
+                <a href={`#${styles.services}`}>View our Services ➤</a>
             </div>
 
             <div id={styles.what_we_do}>
