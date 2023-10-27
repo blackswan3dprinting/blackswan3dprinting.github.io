@@ -20,11 +20,8 @@ body:
       description: What page is this feature for?
       multiple: false
       options:
-        - About
-        - Our Work
-        - Our Team
+        - Home
         - I'm requesting a new page
-        - N/A
         - Other
     validations:
       required: true
