@@ -1,0 +1,27 @@
+name: Repository Edit Request
+description: 🧑‍💻 We should edit the repository structure or contents.
+title: ⚠️ Insert a short title for your bug report.
+labels: ["repository"]
+assignees:
+  - calejvaldez
+body:
+  - type: textarea
+    id: change_proposal
+    attributes:
+      label: Proposal
+      description: What changes should we make to the reposiory and why?
+      placeholder: ex. Extend the README to incoming developers.
+    validations:
+      required: true
+  - type: dropdown
+    id: page
+    attributes:
+      label: Change Type
+      description: What kind of change is this?
+      options:
+        - Addition
+        - Edit
+        - Removal
+        - Other
+    validations:
+      required: true
