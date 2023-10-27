@@ -27,11 +27,8 @@ body:
       label: Page
       description: What page is this report for?
       options:
-        - About
-        - Our Work
-        - Our Team
+        - Home
         - I'm requesting a new page
-        - N/A
         - Other
     validations:
       required: true
