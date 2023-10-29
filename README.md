@@ -2,16 +2,36 @@
 
 ![Black Swan Docs header](/.github/docs_header.png)
 
-Welcome to the [blackswan3d.com](https://blackswan3d.com) repository. This is the code behind our website and server.
+Welcome to the [blackswan3d.com](https://blackswan3d.com) repository. Our website is used as a portfolio to showcase recruiters as well as introduce customers to what Black Swan is and what we create.
 
-## Software/Tools
+## Repository Management
+
+### Issues
+
+The GitHub repository uses Issues and Issue Templates. Contributers can use Issues to submit **feature requests** (enhancement) , **bug reports** (bug), or **repository edit requests** (repository).
+
+### Branches
+
+|Branch|Type|Details|
+|---|---|---|
+|`main`|production|This is the code currently on [our website](https://blackswan3d.com/).|
+|`dev`|development|This is code that is awaiting testing. Typically, already under a Pull Request.|
+|`dev-X`|feature development|Where X is equal an Issue number, these are branches that tackle a specific Issue.|
+
+### Pull Requests
+
+In this repository, we use GitHub Pull Requests to have Joseph (our founder) test the changes that were committed into the `dev` branch. Once these changes are fully approved by Joseph, he merges the branch into `main`, which automatically deploys it to the website.
+
+## What We Use
 
 The website is built using:
 
 - [Render](https://render.com/)
 - [React](https://react.dev)
-- HTML, [Sass](https://sass-lang.com), and [TypeScript](https://www.typescriptlang.org)
+- HTML
+- [Sass](https://sass-lang.com)
+- [TypeScript](https://www.typescriptlang.org)
 
-## Repository Information
+## Need Help?
 
-More in depth documentation will be coming soon. Thanks!
+If you need help, please contact [tech@blackswan3d.com](mailto:tech@blackswan3d.com) and Carlos will try to get back to you soon. Thanks!
