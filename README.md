@@ -51,6 +51,17 @@ npm run dev
 
 After that, you're ready to go!
 
+### Extra instructions for Black Swan employees
+
+If you have a `@blackswan3d.com` email address, please make sure to use that for your commits. Run these extra commands on your terminal:
+
+```bash
+git config --global user.name "firstName lastName"
+git config --global user.email name@blackswan3d.com
+```
+
+Now you're ready to go! Make sure to read up on [how to write commit messages](https://www.freecodecamp.org/news/how-to-write-commit-messages-maintainers-will-like/).
+
 ## Need Help?
 
 If you need help, please contact [tech@blackswan3d.com](mailto:tech@blackswan3d.com) and Carlos will try to get back to you soon. Thanks!
