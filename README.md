@@ -32,6 +32,25 @@ The website is built using:
 - [Sass](https://sass-lang.com)
 - [TypeScript](https://www.typescriptlang.org)
 
+## Setup the Development Environment
+
+To set up the development environment, get your favorite terminal and follow these instructions:
+
+```bash
+# Clone the repository
+git clone https://github.com/blackswan3d.com/blackswan3d.com
+cd blackswan3d.com
+
+# install dependencies
+cd src
+npm install
+
+# begin development environment
+npm run dev
+```
+
+After that, you're ready to go!
+
 ## Need Help?
 
 If you need help, please contact [tech@blackswan3d.com](mailto:tech@blackswan3d.com) and Carlos will try to get back to you soon. Thanks!
