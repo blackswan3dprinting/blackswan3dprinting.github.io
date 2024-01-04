@@ -26,7 +26,7 @@ In this repository, we use GitHub Pull Requests to have Joseph (our founder) tes
 
 The website is built using:
 
-- [Render](https://render.com/)
+- [GitHub Pages](https://pages.github.com/)
 - [React](https://react.dev)
 - HTML
 - [Sass](https://sass-lang.com)
