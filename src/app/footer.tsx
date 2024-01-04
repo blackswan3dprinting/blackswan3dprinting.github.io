@@ -1,3 +1,7 @@
+// footer.tsx
+// Black Swan 3D Printing
+// 
+// Contains the footer code of the website.
 import styles from "../styles/footer.module.scss"
 import { Raleway } from 'next/font/google'
 import Image from "next/image"
@@ -13,6 +17,7 @@ const futura = localFont({
     src: "../styles/futura/futur.ttf"
 })
 
+// Creates an individual, clickable button that links to our socials
 function LinkToSocial( {photo_path, alt_text, value} ) {
     return (
         <div className={styles.footer_socials_logo}>
@@ -23,6 +28,7 @@ function LinkToSocial( {photo_path, alt_text, value} ) {
     )
 }
 
+// Creates the div containing all of our socials. Works with LinkToSocial function
 function CreateSocials() {
     return (
         <div id={styles.footer_socials}>
@@ -34,6 +40,7 @@ function CreateSocials() {
     )
 }
 
+// Creates the contact info
 function CreateContactInfo() {
     return (
         <div id={styles.footer_contact} className={raleway.className}>

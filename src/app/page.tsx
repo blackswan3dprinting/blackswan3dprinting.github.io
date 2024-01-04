@@ -1,3 +1,7 @@
+// page.tsx
+// Black Swan 3D Printing
+// 
+// The main page found on blackswan3d.com
 import styles from '../styles/index.module.scss';
 import { Button } from './button';
 import { EtsyListing } from './etsy_listing';
@@ -5,6 +9,9 @@ import { Raleway } from 'next/font/google';
 import localFont from 'next/font/local';
 import type { Metadata } from 'next';
 
+// This is the metadata found when you link the page on other websites.
+// Cool tool for this: https://discord.com/developers/embeds
+// Read the docs: https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadata-fields
 export const metadata: Metadata = {
     metadataBase: new URL('https://blackswan3d.com'),
     title: "Black Swan 3D Printing - Rare quality and design",
@@ -21,6 +28,7 @@ export const metadata: Metadata = {
       },
 }
 
+// Sets Futura/Raleway fonts
 const futura = localFont({
     src: "../styles/futura/futur.ttf"
 })

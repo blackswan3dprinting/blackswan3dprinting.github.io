@@ -1,7 +1,12 @@
+// header.tsx
+// Black Swan 3D Printing
+// 
+// Contains the code to the header of the website.
 import Image from "next/image";
 import styles from "../styles/header.module.scss"
 import style_link from "../styles/index.module.scss"
 
+// A simple, clickable button function
 function HeaderButton( props: {link: string, label: string} ) {
     return (
         <a className={styles.header_button} href={props.link}>
@@ -11,7 +16,6 @@ function HeaderButton( props: {link: string, label: string} ) {
 }
 
 export function Header() {
-    // The header from every page
     return (
         <header className={styles.header}>
             <Image src="/images/transparent-logo-bird.svg" alt="Black Swan logo" width="100" height="100"/>

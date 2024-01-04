@@ -1,3 +1,7 @@
+// etsy_listing.tsx
+// Black Swan 3D Printing
+// 
+// Code for Etsy listings.
 import styles from "../styles/etsy_listing.module.scss"
 import { Button } from "./button"
 import { Raleway } from "next/font/google"

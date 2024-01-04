@@ -1,3 +1,7 @@
+// button.tsx
+// Black Swan 3D Printing
+// 
+// Code for a single button.
 import styles from "../styles/button.module.scss"
 import localFont from "next/font/local"
 
