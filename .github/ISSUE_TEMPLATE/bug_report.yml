@@ -3,7 +3,7 @@ description: 🪲 I found a bug I'd like to report!
 title: ⚠️ Insert a short title for your bug report.
 labels: ["bug"]
 assignees:
-  - calejvaldez
+  - Electric108
 body:
   - type: textarea
     id: bug_report

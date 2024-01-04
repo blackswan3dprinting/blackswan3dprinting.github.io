@@ -3,7 +3,7 @@ description: 👀 I'd like to request a feature!
 title: ⚠️ Insert a short title for your feature request!
 labels: ["enhancement"]
 assignees:
-  - calejvaldez
+  - Electric108
 body:
   - type: textarea
     id: summary
