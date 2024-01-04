@@ -28,6 +28,7 @@ The website is built using:
 
 - [GitHub Pages](https://pages.github.com/)
 - [React](https://react.dev)
+- [NextJS](https://nextjs.org)
 - HTML
 - [Sass](https://sass-lang.com)
 - [TypeScript](https://www.typescriptlang.org)
@@ -64,4 +65,4 @@ Now you're ready to go! Make sure to read up on [how to write commit messages](h
 
 ## Need Help?
 
-If you need help, please contact [tech@blackswan3d.com](mailto:tech@blackswan3d.com) and Carlos will try to get back to you soon. Thanks!
+If you need help, please contact [joseph@blackswan3d.com](mailto:joseph@blackswan3d.com) and Joseph will try to get back to you soon. Thanks!
