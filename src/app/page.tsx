@@ -43,7 +43,7 @@ export default function Index() {
             <div className={`${styles.headline} ${raleway.className}`}>
                 <h1>YOUR PREMIER 3D PRINTING SERVICE.</h1>
                 <p className={futura.className}>Get your ideas printed with the highest quality materials from a business you can trust.</p>
-                <a className={futura.className} href={`#${styles.services}`}>View our Services ➤</a>
+                <a className={futura.className} href="#services">View our Services ➤</a>
             </div>
 
             <div className={styles.what_we_do} id="what_we_do">
