@@ -4,7 +4,6 @@
 // Contains the code to the header of the website.
 import Image from "next/image";
 import styles from "../styles/header.module.scss"
-import style_link from "../styles/index.module.scss"
 
 // A simple, clickable button function
 function HeaderButton( props: {link: string, label: string} ) {
