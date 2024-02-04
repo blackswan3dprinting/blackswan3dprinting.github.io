@@ -43,8 +43,7 @@ git clone https://github.com/blackswan3d.com/blackswan3d.com
 cd blackswan3d.com
 
 # install dependencies
-cd src
-npm install
+npm i
 
 # begin development environment
 npm run dev
