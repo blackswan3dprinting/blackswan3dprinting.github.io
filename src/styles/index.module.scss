@@ -45,7 +45,7 @@
     }
 }
 
-#what_we_do {
+.what_we_do {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -72,7 +72,7 @@
     }
 }
 
-#services {
+.services {
     color: white;
     h1 {@include commonh1();}
 
@@ -102,7 +102,7 @@
     }
 }
 
-#more_info {
+.more_info {
     margin: 20px 0;
 
     margin: 50px 0;
