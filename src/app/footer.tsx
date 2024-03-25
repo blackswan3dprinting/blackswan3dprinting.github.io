@@ -62,8 +62,8 @@ export function Footer() {
                 <CreateSocials />
             </div>
             <div id={styles.footer_credit} >
-                <p className={futura.className}>Website designed by Austin Chun</p>
-                <p className={futura.className}>Programmed by Carlos Valdez</p>
+                <p className={futura.className}>Website designed by <a href="https://austinchun.online/" target="_blank" rel="noopener noreferrer">Austin Chun</a></p>
+                <p className={futura.className}>Programmed by <a href="https://calejvaldez.com/" target="_blank" rel="noopener noreferrer">Carlos Valdez</a></p>
             </div>
 
         </footer>
